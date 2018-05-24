@@ -1,0 +1,104 @@
+html, body, ol, ul, li, details, summary, table, tbody, tr, td, div, button {
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow-y: hidden;
+    font-family: Consolas;
+}
+
+#top ol {
+    margin-left: 3rem;
+}
+#top ul {
+    list-style-type: none;
+    margin-left: 2rem;
+}
+#top > ul {
+    margin-left: 1rem;
+    margin-right: 0.4rem;
+}
+#top ul.terms {
+    margin-left: 0;
+}
+#top li {
+    margin: 1rem 0 1rem 0.6rem;
+}
+#top > ul > li {
+    margin-left: 0;
+}
+#top table {
+    border-collapse: collapse;
+}
+#top ol li:not(:last-of-type) table {
+    border-bottom: 0.05rem solid;
+}
+#top ol li:not(:last-of-type) tr:last-of-type td {
+    padding-bottom: 0.95rem;
+}
+#top tr td:first-of-type {
+    text-align: right;
+    vertical-align: top;
+}
+#top td:nth-of-type(2), regex, term {
+    white-space: pre-wrap;
+}
+
+
+matches, terms {
+    font-weight: bold;
+}
+regex {
+    display: block;
+    /*display: none;*/
+    margin-left: 1.2rem;
+}
+#top > ul > li:first-of-type > details > summary > regex {
+    display: inline;
+    margin-left: 0.5rem;
+}
+#top > ul > li:first-of-type > details > summary > matches span:nth-of-type(2) {
+    display: none;
+}
+matches, terms, td:first-of-type {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+#top, #resizer, #bottom {
+    margin-left: 3.5rem;
+}
+#top {
+    overflow-y: scroll;
+    height: 49vh;
+    height: 98vh;
+}
+#resizer {
+    background: url(../images/splitter.png) center center no-repeat;
+    background-size: auto 80%;
+    height: 2vh;
+    cursor: row-resize;
+}
+#bottom {
+    overflow-y: scroll;
+    height: 49vh;
+    height: 0;
+}
+
+#bottom table {
+    border-collapse: collapse;
+    margin-left: 0.7rem;
+}
+#bottom tr td:first-of-type {
+    text-align: right;
+    vertical-align: top;
+    padding-right: 0.7rem;
+}
+#bottom tr td:nth-of-type(2) {
+    white-space: pre-wrap;
+}
+

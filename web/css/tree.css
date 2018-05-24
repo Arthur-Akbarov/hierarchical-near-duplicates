@@ -1,0 +1,92 @@
+:root {
+    --one-char-padding: 0.7rem;
+}
+html, body, ol, ul, li, details, summary, table, tbody, tr, td, div, button {
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow-y: hidden;
+    font-family: Consolas;
+}
+
+#top ol {
+    margin-left: 2rem;
+    list-style-type: none;
+}
+#top > ol {
+    margin-left: 1rem;
+    margin-right: 0.4rem;
+}
+#top ol.terms {
+    margin-left: 0;
+}
+#top li {
+    margin: 15px 0;
+}
+#top table {
+    border-collapse: collapse;
+    margin: 1rem 0 0 2rem;
+}
+#top tr td:first-of-type {
+    text-align: right;
+    vertical-align: top;
+}
+#top tr.padding {
+    height: 1rem;
+}
+#top tr.hr {
+    height: 0.05rem;
+}
+#top td:first-of-type {
+    padding-right: var(--one-char-padding);
+}
+#top td:nth-of-type(2), regex, term {
+    white-space: pre-wrap;
+}
+matches, terms {
+    font-weight: bold;
+}
+
+td:nth-of-type(1), matches, terms {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+
+#top, #resizer, #bottom {
+    margin-left: 3.5rem;
+}
+#top {
+    overflow-y: scroll;
+    height: 98vh;
+}
+#resizer {
+    background: url(../images/splitter.png) center center no-repeat;
+    background-size: auto 80%;
+    height: 2vh;
+    cursor: row-resize;
+}
+#bottom {
+    overflow-y: scroll;
+    height: 0;
+}
+
+
+#bottom table {
+    border-collapse: collapse;
+    margin-left: var(--one-char-padding);
+}
+#bottom tr td:first-of-type {
+    text-align: right;
+    vertical-align: top;
+    padding-right: var(--one-char-padding);
+}
+#bottom tr td:nth-of-type(2) {
+    white-space: pre-wrap;
+}
+

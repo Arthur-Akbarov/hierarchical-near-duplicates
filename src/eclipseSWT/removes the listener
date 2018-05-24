@@ -1,0 +1,868 @@
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeModifyListener
+public void removeModifyListener(ModifyListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver's text is modified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ModifyListener, addModifyListener(org.eclipse.swt.events.ModifyListener)
+
+removeSegmentListener
+public void removeSegmentListener(SegmentListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver's text is modified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.103
+See Also:
+SegmentEvent, SegmentListener, addSegmentListener(org.eclipse.swt.events.SegmentListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's selection.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeVerifyListener
+public void removeVerifyListener(VerifyListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is verified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.1
+See Also:
+VerifyListener, addVerifyListener(org.eclipse.swt.events.VerifyListener)
+
+removeControlListener
+public void removeControlListener(ControlListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is moved or resized.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ControlListener, addControlListener(org.eclipse.swt.events.ControlListener)
+
+removeDragDetectListener
+public void removeDragDetectListener(DragDetectListener listener)
+Removes the listener from the collection of listeners who will be notified when a drag gesture occurs.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.3
+See Also:
+DragDetectListener, addDragDetectListener(org.eclipse.swt.events.DragDetectListener)
+
+removeFocusListener
+public void removeFocusListener(FocusListener listener)
+Removes the listener from the collection of listeners who will be notified when the control gains or loses focus.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+FocusListener, addFocusListener(org.eclipse.swt.events.FocusListener)
+
+removeGestureListener
+public void removeGestureListener(GestureListener listener)
+Removes the listener from the collection of listeners who will be notified when gesture events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.7
+See Also:
+GestureListener, addGestureListener(org.eclipse.swt.events.GestureListener)
+
+removeHelpListener
+public void removeHelpListener(HelpListener listener)
+Removes the listener from the collection of listeners who will be notified when the help events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+HelpListener, addHelpListener(org.eclipse.swt.events.HelpListener)
+
+removeKeyListener
+public void removeKeyListener(KeyListener listener)
+Removes the listener from the collection of listeners who will be notified when keys are pressed and released on the system keyboard.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+KeyListener, addKeyListener(org.eclipse.swt.events.KeyListener)
+
+removeMenuDetectListener
+public void removeMenuDetectListener(MenuDetectListener listener)
+Removes the listener from the collection of listeners who will be notified when the platform-specific context menu trigger has occurred.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.3
+See Also:
+MenuDetectListener, addMenuDetectListener(org.eclipse.swt.events.MenuDetectListener)
+
+removeMouseTrackListener
+public void removeMouseTrackListener(MouseTrackListener listener)
+Removes the listener from the collection of listeners who will be notified when the mouse passes or hovers over controls.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+MouseTrackListener, addMouseTrackListener(org.eclipse.swt.events.MouseTrackListener)
+
+removeMouseListener
+public void removeMouseListener(MouseListener listener)
+Removes the listener from the collection of listeners who will be notified when mouse buttons are pressed and released.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+MouseListener, addMouseListener(org.eclipse.swt.events.MouseListener)
+
+removeMouseMoveListener
+public void removeMouseMoveListener(MouseMoveListener listener)
+Removes the listener from the collection of listeners who will be notified when the mouse moves.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+MouseMoveListener, addMouseMoveListener(org.eclipse.swt.events.MouseMoveListener)
+
+removeMouseWheelListener
+public void removeMouseWheelListener(MouseWheelListener listener)
+Removes the listener from the collection of listeners who will be notified when the mouse wheel is scrolled.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.3
+See Also:
+MouseWheelListener, addMouseWheelListener(org.eclipse.swt.events.MouseWheelListener)
+
+removePaintListener
+public void removePaintListener(PaintListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver needs to be painted.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+PaintListener, addPaintListener(org.eclipse.swt.events.PaintListener)
+
+removeTouchListener
+public void removeTouchListener(TouchListener listener)
+Removes the listener from the collection of listeners who will be notified when touch events occur.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.7
+See Also:
+TouchListener, addTouchListener(org.eclipse.swt.events.TouchListener)
+
+removeTraverseListener
+public void removeTraverseListener(TraverseListener listener)
+Removes the listener from the collection of listeners who will be notified when traversal events occur.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+TraverseListener, addTraverseListener(org.eclipse.swt.events.TraverseListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners that will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+2.0
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeFilter
+public void removeFilter(int eventType,
+                         Listener listener)
+Removes the listener from the collection of listeners who will be notified when an event of the given type occurs anywhere in a widget. The event type is one of the event constants defined in class SWT.
+Parameters:
+eventType - the type of event to listen for
+listener - the listener which should no longer be notified when the event occurs
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.0
+See Also:
+Listener, SWT, addFilter(int, org.eclipse.swt.widgets.Listener), addListener(int, org.eclipse.swt.widgets.Listener)
+
+removeListener
+public void removeListener(int eventType,
+                           Listener listener)
+Removes the listener from the collection of listeners who will be notified when an event of the given type occurs. The event type is one of the event constants defined in class SWT.
+Parameters:
+eventType - the type of event to listen for
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+ERROR_DEVICE_DISPOSED - if the receiver has been disposed
+since. :
+2.0
+See Also:
+Listener, SWT, addListener(int, org.eclipse.swt.widgets.Listener)
+
+removeExpandListener
+public void removeExpandListener(ExpandListener listener)
+Removes the listener from the collection of listeners who will be notified when items in the receiver are expanded or collapsed.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ExpandListener, addExpandListener(org.eclipse.swt.events.ExpandListener)
+
+removeImageLoaderListener
+public void removeImageLoaderListener(ImageLoaderListener listener)
+Removes the listener from the collection of listeners who will be notified when image data is either partially or completely loaded.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+See Also:
+addImageLoaderListener(ImageLoaderListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's selection.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeHelpListener
+public void removeHelpListener(HelpListener listener)
+Removes the listener from the collection of listeners who will be notified when the help events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+HelpListener, addHelpListener(org.eclipse.swt.events.HelpListener)
+
+removeMenuListener
+public void removeMenuListener(MenuListener listener)
+Removes the listener from the collection of listeners who will be notified when the menu events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+MenuListener, addMenuListener(org.eclipse.swt.events.MenuListener)
+
+removeArmListener
+public void removeArmListener(ArmListener listener)
+Removes the listener from the collection of listeners who will be notified when the arm events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ArmListener, addArmListener(org.eclipse.swt.events.ArmListener)
+
+removeHelpListener
+public void removeHelpListener(HelpListener listener)
+Removes the listener from the collection of listeners who will be notified when the help events are generated for the control.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+HelpListener, addHelpListener(org.eclipse.swt.events.HelpListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's value.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's value.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeShellListener
+public void removeShellListener(ShellListener listener)
+Removes the listener from the collection of listeners who will be notified when operations are performed on the receiver.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ShellListener, addShellListener(org.eclipse.swt.events.ShellListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's value.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeModifyListener
+public void removeModifyListener(ModifyListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver's text is modified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ModifyListener, addModifyListener(org.eclipse.swt.events.ModifyListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's selection.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's selection.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(SelectionListener)
+
+removeControlListener
+public void removeControlListener(ControlListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is moved or resized.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ControlListener, addControlListener(org.eclipse.swt.events.ControlListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeModifyListener
+public void removeModifyListener(ModifyListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver's text is modified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ModifyListener, addModifyListener(org.eclipse.swt.events.ModifyListener)
+
+removeSegmentListener
+public void removeSegmentListener(SegmentListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver's text is modified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.8
+See Also:
+SegmentEvent, SegmentListener, addSegmentListener(org.eclipse.swt.events.SegmentListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeVerifyListener
+public void removeVerifyListener(VerifyListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is verified.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+VerifyListener, addVerifyListener(org.eclipse.swt.events.VerifyListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeControlListener
+public void removeControlListener(ControlListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is moved or resized.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ControlListener, addControlListener(org.eclipse.swt.events.ControlListener)
+
+removeKeyListener
+public void removeKeyListener(KeyListener listener)
+Removes the listener from the collection of listeners who will be notified when keys are pressed and released on the system keyboard.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+KeyListener, addKeyListener(org.eclipse.swt.events.KeyListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the receiver is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeMenuDetectListener
+public void removeMenuDetectListener(MenuDetectListener listener)
+Removes the listener from the collection of listeners who will be notified when the platform-specific context menu trigger has occurred.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+since. :
+3.3
+See Also:
+MenuDetectListener, addMenuDetectListener(org.eclipse.swt.events.MenuDetectListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the user changes the receiver's selection.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeTreeListener
+public void removeTreeListener(TreeListener listener)
+Removes the listener from the collection of listeners who will be notified when items in the receiver are expanded or collapsed.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+TreeListener, addTreeListener(org.eclipse.swt.events.TreeListener)
+
+removeControlListener
+public void removeControlListener(ControlListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is moved or resized.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+ControlListener, addControlListener(org.eclipse.swt.events.ControlListener)
+
+removeSelectionListener
+public void removeSelectionListener(SelectionListener listener)
+Removes the listener from the collection of listeners who will be notified when the control is selected by the user.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+SelectionListener, addSelectionListener(org.eclipse.swt.events.SelectionListener)
+
+removeListener
+public void removeListener(int eventType,
+                           Listener listener)
+Removes the listener from the collection of listeners who will be notified when an event of the given type occurs. The event type is one of the event constants defined in class SWT.
+Parameters:
+eventType - the type of event to listen for
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+Listener, SWT, addListener(int, org.eclipse.swt.widgets.Listener), getListeners(int), notifyListeners(int, org.eclipse.swt.widgets.Event)
+
+removeListener
+protected void removeListener(int eventType,
+                              SWTEventListener listener)
+Removes the listener from the collection of listeners who will be notified when an event of the given type occurs. IMPORTANT: This method is not part of the SWT public API. It is marked public only so that it can be shared within the packages provided by SWT. It should never be referenced from application code.
+Parameters:
+eventType - the type of event to listen for
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+Listener, addListener(int, org.eclipse.swt.widgets.Listener)
+
+removeDisposeListener
+public void removeDisposeListener(DisposeListener listener)
+Removes the listener from the collection of listeners who will be notified when the widget is disposed.
+Parameters:
+listener - the listener which should no longer be notified
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the listener is null
+SWTException -
+ERROR_WIDGET_DISPOSED - if the receiver has been disposed
+ERROR_THREAD_INVALID_ACCESS - if not called from the thread that created the receiver
+See Also:
+DisposeListener, addDisposeListener(org.eclipse.swt.events.DisposeListener)
+

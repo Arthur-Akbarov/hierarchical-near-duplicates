@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the string</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="openLDAP">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../auto_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ol>
+	<li><details>
+		<summary><!--
+			--><matches>42</matches><!--
+			--><regex><m>(T|t)</m>he string<m>s?</m> <m>*</m>reside<m>s?</m> in memory assigned to the BerElement<m>,?</m> and must not be freed by the caller.</regex>
+		</summary>
+		<ol>
+			<li><details>
+				<summary><!--
+					--><matches>14</matches><!--
+					--><regex><c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>14</terms><!--
+								--><term>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>772</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>773</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>774</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>775</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>776</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>777</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>778</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1162</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>1163</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1164</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>1165</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1166</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>1167</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>1168</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1343</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>1344</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1345</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>1346</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1347</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>1348</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>1349</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1524</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>1525</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1526</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>1527</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1528</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>1529</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>1530</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1705</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>1706</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1707</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>1708</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1709</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>1710</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>1711</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1886</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>1887</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1888</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>1889</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>1890</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>1891</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>1892</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2067</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>2068</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2069</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>2070</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2071</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>2072</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>2073</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2248</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>2249</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2250</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>2251</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2252</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>2253</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>2254</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2429</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>2430</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2431</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>2432</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2433</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>2434</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>2435</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2610</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>2611</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2612</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>2613</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2614</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>2615</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>2616</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2791</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>2792</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2793</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>2794</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>2795</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>2796</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>2797</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4212</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>4213</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4214</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>4215</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4216</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>4217</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>4218</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4393</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>4394</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4395</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>4396</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4397</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>4398</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>4399</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4783</span><span>-</span></td>
+									<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+								</tr>
+								<tr>
+									<td><span>4784</span><span>-</span></td>
+									<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4785</span><span>-</span></td>
+									<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+								</tr>
+								<tr>
+									<td><span>4786</span><span>:</span></td>
+									<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c>the string will reside in memory assigned to the BerElement, and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+								</tr>
+								<tr>
+									<td><span>4787</span><span>-</span></td>
+									<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+								</tr>
+								<tr>
+									<td><span>4788</span><span>-</span></td>
+									<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+								<tr>
+									<td><span>4789</span><span>-</span></td>
+									<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>14</matches><!--
+					--><regex><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>14</terms><!--
+								--><term><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>699</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>700</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>701</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>702</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>703</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>704</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>705</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1089</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1090</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1091</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1092</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1093</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1094</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>1095</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1270</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1271</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1272</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1273</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1274</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1275</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>1276</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1451</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1452</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1453</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1454</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1455</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1456</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>1457</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1632</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1633</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1634</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1635</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1636</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1637</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>1638</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1813</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1814</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1815</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1816</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1817</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1818</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>1819</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1994</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1995</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>1996</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1997</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>1998</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1999</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>2000</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2175</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2176</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>2177</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2178</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>2179</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2180</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>2181</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2356</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2357</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>2358</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2359</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>2360</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2361</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>2362</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2537</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2538</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>2539</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2540</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>2541</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2542</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>2543</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2718</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2719</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>2720</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2721</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>2722</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2723</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>2724</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4139</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4140</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>4141</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4142</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>4143</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4144</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>4145</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4320</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4321</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>4322</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4323</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>4324</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4325</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>4326</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4710</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4711</span><span>-</span></td>
+									<td>m</td>
+								</tr>
+								<tr>
+									<td><span>4712</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4713</span><span>:</span></td>
+									<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c>The string resides in memory assigned to the BerElement, and must not be freed by the caller.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>4714</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4715</span><span>-</span></td>
+									<td>b</td>
+								</tr>
+								<tr>
+									<td><span>4716</span><span>-</span></td>
+									<td></td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>14</matches><!--
+					--><regex><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>14</terms><!--
+								--><term><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>735</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>736</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>737</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>738</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>739</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>740</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>741</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1125</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1126</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>1127</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1128</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>1129</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1130</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>1131</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1306</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1307</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>1308</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1309</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>1310</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1311</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>1312</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1487</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1488</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>1489</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1490</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>1491</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1492</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>1493</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1668</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1669</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>1670</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1671</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>1672</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1673</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>1674</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>1849</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1850</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>1851</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1852</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>1853</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>1854</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>1855</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2030</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2031</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>2032</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2033</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>2034</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2035</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>2036</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2211</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2212</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>2213</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2214</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>2215</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2216</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>2217</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2392</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2393</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>2394</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2395</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>2396</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2397</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>2398</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2573</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2574</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>2575</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2576</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>2577</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2578</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>2579</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>2754</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2755</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>2756</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2757</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>2758</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>2759</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>2760</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4175</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4176</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>4177</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4178</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>4179</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4180</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>4181</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4356</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4357</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>4358</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4359</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>4360</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4361</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>4362</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>4746</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4747</span><span>-</span></td>
+									<td>M</td>
+								</tr>
+								<tr>
+									<td><span>4748</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4749</span><span>:</span></td>
+									<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c>The strings in each struct berval reside in memory assigned to the BerElement and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+								</tr>
+								<tr>
+									<td><span>4750</span><span>-</span></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span>4751</span><span>-</span></td>
+									<td>l</td>
+								</tr>
+								<tr>
+									<td><span>4752</span><span>-</span></td>
+									<td></td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details><summary><span>terms</span></summary><ol class="terms">
+				<li><details>
+					<summary><!--
+						--><terms>14</terms><!--
+						--><term>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>772</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>773</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>774</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>775</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>776</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>777</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>778</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1162</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>1163</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1164</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>1165</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1166</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>1167</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>1168</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1343</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>1344</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1345</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>1346</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1347</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>1348</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>1349</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1524</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>1525</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1526</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>1527</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1528</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>1529</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>1530</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1705</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>1706</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1707</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>1708</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1709</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>1710</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>1711</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1886</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>1887</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1888</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>1889</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>1890</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>1891</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>1892</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2067</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>2068</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2069</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>2070</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2071</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>2072</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>2073</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2248</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>2249</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2250</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>2251</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2252</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>2253</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>2254</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2429</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>2430</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2431</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>2432</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2433</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>2434</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>2435</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2610</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>2611</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2612</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>2613</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2614</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>2615</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>2616</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2791</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>2792</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2793</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>2794</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>2795</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>2796</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>2797</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4212</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>4213</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4214</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>4215</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4216</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>4217</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>4218</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4393</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>4394</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4395</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>4396</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4397</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>4398</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>4399</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4783</span><span>-</span></td>
+							<td>The ber_get_stringb() routine is used to read an octet string into a preallocated buffer. The len parameter should be initialized to the size of the buffer, and will contain the length of the octet string read upon return. The buffer should be big enough to take the octet string value plus a terminating NULL byte.</td>
+						</tr>
+						<tr>
+							<td><span>4784</span><span>-</span></td>
+							<td>The ber_get_stringa() routine is used to dynamically allocate space into which an octet string is read. The caller should free the returned string using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4785</span><span>-</span></td>
+							<td>The ber_get_stringal() routine is used to dynamically allocate space into which an octet string and its length are read. It takes a struct berval **, and returns the result in this parameter. The caller should free the returned structure using ber_bvfree().</td>
+						</tr>
+						<tr>
+							<td><span>4786</span><span>:</span></td>
+							<td>The ber_get_stringbv() routine is used to read an octet string and its length into the provided struct berval *. <h>If the alloc parameter is zero, <c></c>t<c>he string</c><c> </c>will <c>reside</c><c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h> If the alloc parameter is non-zero, the string will be copied into dynamically allocated space which should be returned using ber_memfree().</td>
+						</tr>
+						<tr>
+							<td><span>4787</span><span>-</span></td>
+							<td>The ber_get_null() routine is used to read a NULL element. It returns the tag of the element it skips over.</td>
+						</tr>
+						<tr>
+							<td><span>4788</span><span>-</span></td>
+							<td>The ber_get_boolean() routine is used to read a boolean value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+						<tr>
+							<td><span>4789</span><span>-</span></td>
+							<td>The ber_get_enum() routine is used to read a enumeration value. It is called the same way that ber_get_int() is called.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>14</terms><!--
+						--><term><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>699</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>700</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>701</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>702</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>703</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>704</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>705</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1089</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1090</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1091</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1092</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1093</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1094</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>1095</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1270</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1271</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1272</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1273</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1274</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1275</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>1276</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1451</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1452</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1453</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1454</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1455</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1456</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>1457</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1632</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1633</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1634</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1635</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1636</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1637</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>1638</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1813</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1814</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1815</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1816</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1817</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1818</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>1819</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1994</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1995</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>1996</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1997</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>1998</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1999</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>2000</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2175</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2176</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>2177</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2178</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>2179</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2180</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>2181</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2356</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2357</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>2358</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2359</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>2360</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2361</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>2362</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2537</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2538</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>2539</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2540</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>2541</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2542</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>2543</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2718</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2719</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>2720</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2721</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>2722</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2723</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>2724</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4139</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4140</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>4141</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4142</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>4143</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4144</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>4145</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4320</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4321</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>4322</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4323</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>4324</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4325</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>4326</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4710</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4711</span><span>-</span></td>
+							<td>m</td>
+						</tr>
+						<tr>
+							<td><span>4712</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4713</span><span>:</span></td>
+							<td>Octet string. A struct ber_val * should be supplied, which upon return contains the octet string and its length. <h><c></c>T<c>he string</c><c> </c><c>reside</c>s<c> in memory assigned to the BerElement</c>,<c> and must not be freed by the caller.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>4714</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4715</span><span>-</span></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><span>4716</span><span>-</span></td>
+							<td></td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>14</terms><!--
+						--><term><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>735</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>736</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>737</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>738</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>739</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>740</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>741</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1125</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1126</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>1127</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1128</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>1129</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1130</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>1131</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1306</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1307</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>1308</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1309</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>1310</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1311</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>1312</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1487</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1488</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>1489</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1490</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>1491</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1492</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>1493</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1668</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1669</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>1670</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1671</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>1672</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1673</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>1674</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>1849</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1850</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>1851</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1852</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>1853</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>1854</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>1855</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2030</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2031</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>2032</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2033</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>2034</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2035</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>2036</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2211</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2212</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>2213</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2214</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>2215</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2216</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>2217</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2392</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2393</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>2394</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2395</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>2396</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2397</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>2398</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2573</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2574</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>2575</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2576</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>2577</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2578</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>2579</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>2754</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2755</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>2756</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2757</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>2758</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2759</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>2760</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4175</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4176</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>4177</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4178</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>4179</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4180</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>4181</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4356</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4357</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>4358</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4359</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>4360</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4361</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>4362</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>4746</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4747</span><span>-</span></td>
+							<td>M</td>
+						</tr>
+						<tr>
+							<td><span>4748</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4749</span><span>:</span></td>
+							<td>Sequence of octet strings with lengths. This is a generalized form of the previous three formats. A void ** (ptr) should be supplied, followed by a ber_len_t * (len) and a ber_len_t (off). Upon return (ptr) will point to a dynamically allocated array whose elements are all of size (*len). A struct berval will be filled starting at offset (off) in each element. <h><c></c>T<c>he string</c>s<c> </c>in each struct berval <c>reside</c><c> in memory assigned to the BerElement</c><c> and must not be freed by the caller.</c></h> The array is terminated by a struct berval with a NULL bv_val string pointer. NULL is returned if the sequence is empty. The number of elements in the array is also stored in (*len) on return. The caller should free the returned array using ber_memfree() .</td>
+						</tr>
+						<tr>
+							<td><span>4750</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>4751</span><span>-</span></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><span>4752</span><span>-</span></td>
+							<td></td>
+						</tr>
+					</tbody></table>
+				</details></li>
+			</ol></details></li>
+		</ol>
+	</details></li>
+	</ol></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this pointer</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="openLDAP">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../auto_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ol>
+	<li><details>
+		<summary><!--
+			--><matches>9</matches><!--
+			--><regex>This pointer should be supplied on a subsequent call to <m>*</m> to get the next <m>*</m>, the result of which should be supplied to the next call to <m>*</m>, etc. <m>*</m> will return NULL when there are no more</regex>
+		</summary>
+		<ol>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>3</terms><!--
+								--><term><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>8006</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>8007</span><span>-</span></td>
+									<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+								</tr>
+								<tr>
+									<td><span>8008</span><span>-</span></td>
+									<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+								</tr>
+								<tr>
+									<td><span>8009</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c></h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+								</tr>
+								<tr>
+									<td><span>8010</span><span>-</span></td>
+									<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+								</tr>
+								<tr>
+									<td><span>8011</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>8012</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>9762</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>9763</span><span>-</span></td>
+									<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+								</tr>
+								<tr>
+									<td><span>9764</span><span>-</span></td>
+									<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+								</tr>
+								<tr>
+									<td><span>9765</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c></h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+								</tr>
+								<tr>
+									<td><span>9766</span><span>-</span></td>
+									<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+								</tr>
+								<tr>
+									<td><span>9767</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>9768</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>12611</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>12612</span><span>-</span></td>
+									<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+								</tr>
+								<tr>
+									<td><span>12613</span><span>-</span></td>
+									<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+								</tr>
+								<tr>
+									<td><span>12614</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c></h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+								</tr>
+								<tr>
+									<td><span>12615</span><span>-</span></td>
+									<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+								</tr>
+								<tr>
+									<td><span>12616</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>12617</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>3</terms><!--
+								--><term><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>8035</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>8036</span><span>-</span></td>
+									<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+								</tr>
+								<tr>
+									<td><span>8037</span><span>-</span></td>
+									<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>8038</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>8039</span><span>-</span></td>
+									<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+								</tr>
+								<tr>
+									<td><span>8040</span><span>-</span></td>
+									<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+								</tr>
+								<tr>
+									<td><span>8041</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>9791</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>9792</span><span>-</span></td>
+									<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+								</tr>
+								<tr>
+									<td><span>9793</span><span>-</span></td>
+									<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>9794</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>9795</span><span>-</span></td>
+									<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+								</tr>
+								<tr>
+									<td><span>9796</span><span>-</span></td>
+									<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+								</tr>
+								<tr>
+									<td><span>9797</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>12640</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>12641</span><span>-</span></td>
+									<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+								</tr>
+								<tr>
+									<td><span>12642</span><span>-</span></td>
+									<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>12643</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>12644</span><span>-</span></td>
+									<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+								</tr>
+								<tr>
+									<td><span>12645</span><span>-</span></td>
+									<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+								</tr>
+								<tr>
+									<td><span>12646</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>3</terms><!--
+								--><term><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>8065</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>8066</span><span>-</span></td>
+									<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+								</tr>
+								<tr>
+									<td><span>8067</span><span>-</span></td>
+									<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>8068</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c></h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+								</tr>
+								<tr>
+									<td><span>8069</span><span>-</span></td>
+									<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+								</tr>
+								<tr>
+									<td><span>8070</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>8071</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>9821</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>9822</span><span>-</span></td>
+									<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+								</tr>
+								<tr>
+									<td><span>9823</span><span>-</span></td>
+									<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>9824</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c></h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+								</tr>
+								<tr>
+									<td><span>9825</span><span>-</span></td>
+									<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+								</tr>
+								<tr>
+									<td><span>9826</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>9827</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+								</tr>
+								<tr class="padding"></tr>
+								<tr class="hr"><td></td><td></td></tr>
+								<tr class="padding"></tr>
+								<tr>
+									<td><span>12670</span><span>-</span></td>
+									<td>DESCRIPTION</td>
+								</tr>
+								<tr>
+									<td><span>12671</span><span>-</span></td>
+									<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+								</tr>
+								<tr>
+									<td><span>12672</span><span>-</span></td>
+									<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+								</tr>
+								<tr>
+									<td><span>12673</span><span>:</span></td>
+									<td><h><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c></h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+								</tr>
+								<tr>
+									<td><span>12674</span><span>-</span></td>
+									<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+								</tr>
+								<tr>
+									<td><span>12675</span><span>-</span></td>
+									<td>ERRORS</td>
+								</tr>
+								<tr>
+									<td><span>12676</span><span>-</span></td>
+									<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details><summary><span>terms</span></summary><ol class="terms">
+				<li><details>
+					<summary><!--
+						--><terms>3</terms><!--
+						--><term><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>8006</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>8007</span><span>-</span></td>
+							<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+						</tr>
+						<tr>
+							<td><span>8008</span><span>-</span></td>
+							<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+						</tr>
+						<tr>
+							<td><span>8009</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+						</tr>
+						<tr>
+							<td><span>8010</span><span>-</span></td>
+							<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+						</tr>
+						<tr>
+							<td><span>8011</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>8012</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>9762</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>9763</span><span>-</span></td>
+							<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+						</tr>
+						<tr>
+							<td><span>9764</span><span>-</span></td>
+							<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+						</tr>
+						<tr>
+							<td><span>9765</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+						</tr>
+						<tr>
+							<td><span>9766</span><span>-</span></td>
+							<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+						</tr>
+						<tr>
+							<td><span>9767</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>9768</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>12611</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>12612</span><span>-</span></td>
+							<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+						</tr>
+						<tr>
+							<td><span>12613</span><span>-</span></td>
+							<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+						</tr>
+						<tr>
+							<td><span>12614</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</h> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+						</tr>
+						<tr>
+							<td><span>12615</span><span>-</span></td>
+							<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+						</tr>
+						<tr>
+							<td><span>12616</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>12617</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>3</terms><!--
+						--><term><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>8035</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>8036</span><span>-</span></td>
+							<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+						</tr>
+						<tr>
+							<td><span>8037</span><span>-</span></td>
+							<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>8038</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</h></td>
+						</tr>
+						<tr>
+							<td><span>8039</span><span>-</span></td>
+							<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+						</tr>
+						<tr>
+							<td><span>8040</span><span>-</span></td>
+							<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+						</tr>
+						<tr>
+							<td><span>8041</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>9791</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>9792</span><span>-</span></td>
+							<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+						</tr>
+						<tr>
+							<td><span>9793</span><span>-</span></td>
+							<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>9794</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</h></td>
+						</tr>
+						<tr>
+							<td><span>9795</span><span>-</span></td>
+							<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+						</tr>
+						<tr>
+							<td><span>9796</span><span>-</span></td>
+							<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+						</tr>
+						<tr>
+							<td><span>9797</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>12640</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>12641</span><span>-</span></td>
+							<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+						</tr>
+						<tr>
+							<td><span>12642</span><span>-</span></td>
+							<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>12643</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</h></td>
+						</tr>
+						<tr>
+							<td><span>12644</span><span>-</span></td>
+							<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+						</tr>
+						<tr>
+							<td><span>12645</span><span>-</span></td>
+							<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+						</tr>
+						<tr>
+							<td><span>12646</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>3</terms><!--
+						--><term><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>8065</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>8066</span><span>-</span></td>
+							<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+						</tr>
+						<tr>
+							<td><span>8067</span><span>-</span></td>
+							<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>8068</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+						</tr>
+						<tr>
+							<td><span>8069</span><span>-</span></td>
+							<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+						</tr>
+						<tr>
+							<td><span>8070</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>8071</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>9821</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>9822</span><span>-</span></td>
+							<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+						</tr>
+						<tr>
+							<td><span>9823</span><span>-</span></td>
+							<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>9824</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+						</tr>
+						<tr>
+							<td><span>9825</span><span>-</span></td>
+							<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+						</tr>
+						<tr>
+							<td><span>9826</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>9827</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>12670</span><span>-</span></td>
+							<td>DESCRIPTION</td>
+						</tr>
+						<tr>
+							<td><span>12671</span><span>-</span></td>
+							<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+						</tr>
+						<tr>
+							<td><span>12672</span><span>-</span></td>
+							<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+						</tr>
+						<tr>
+							<td><span>12673</span><span>:</span></td>
+							<td><h><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</h> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+						</tr>
+						<tr>
+							<td><span>12674</span><span>-</span></td>
+							<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+						</tr>
+						<tr>
+							<td><span>12675</span><span>-</span></td>
+							<td>ERRORS</td>
+						</tr>
+						<tr>
+							<td><span>12676</span><span>-</span></td>
+							<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+			</ol></details></li>
+		</ol>
+	</details></li>
+	</ol></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

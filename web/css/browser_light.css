@@ -1,0 +1,46 @@
+body {
+    background-color: #fff;
+    color: #222;
+}
+
+#top a {
+    color: #222;
+}
+#top a {
+    border-color: #fff;
+}
+#top a:hover {
+    background-color: #ccc;
+    border-color: #5F8CEF;
+    color: #1466ff;
+}
+#top summary {
+    border-color: #666;
+}
+#top summary:hover {
+    background-color: #ccc;
+    border-color: #5F8CEF;
+}
+#top summary:hover span {
+    color: #1466ff;
+}
+
+summary {
+    color: #666;
+}
+summary span {
+    color: #222;
+}
+matches {
+    color: #383838;
+}
+#sidebar {
+    background-color: #666;
+}
+#sidebar button {
+    background-color: #575757;
+    border-color: #999;
+}
+#sidebar button {
+    color: #ededed;
+}

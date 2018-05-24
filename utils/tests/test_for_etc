@@ -1,0 +1,10 @@
+по запросу на term
+
+должно захватить дальше etc.
+Also note, if control characters like '\n', '\t' etc. are used in the string, then the behavior is platform dependent.
+
+должно немедленно закончится после etc. и обрамляющей пунктуации
+It calls to ldap_bind(), ldap_search(), etc. Certain fields.
+Routines (e.g., ldap_search_ext(3), ldap_modify_ext(3), etc.). Those routines.
+Next call to ldap_next_entry(), etc. ldap_next_entry will return.
+Next call to ldap_next_entry(), etc. entry() will return.

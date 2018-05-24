@@ -1,0 +1,10 @@
+debug functions marks
+всего 7 функций
+1=317-320=4, 2=321-325=5, 3=326-330=5, 4=331-334=4, 5=335-338=4, 6=339-342=4, 7=343-346=4
+
+
+# два начала предложения входят в разном порядке
+# первый вариант встречается в повторах 1,2,3, а второй в 7
+
+When the real object is already tracked by debugobjects it is[\s\S]*?When the real object is not (yet )?tracked by debugobjects
+When the real object is not (yet )?tracked by debugobjects[\s\S]*?When the real object is already tracked by debugobjects it is

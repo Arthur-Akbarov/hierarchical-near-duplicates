@@ -1,0 +1,68 @@
+body {
+    background-color: #242424;
+    background-color: #111;
+    color: #ccc;
+}
+regex {
+    color: #ccc;
+    color: #95a4b4;
+    color: #a9b7c6;
+}
+m {
+    color: #8262F0;
+    color: #f26;
+    color: #cc1950;
+    color: #FF00FF;
+    color: #AE12F6;
+}
+regex c {
+    color: #95a4b4;
+    color: #43abc9;
+    color: #5F8CEF;
+}
+term c {
+    color: #7d7;
+    color: #50fa7b;
+}
+h {
+    color: #fb6;
+    color: #ffb86c;
+}
+td c, h c {
+    color: #4a4;
+    color: #05D87A;
+    color: #40c862;
+}
+
+
+summary {
+    color: #666;
+}
+summary span, term {
+    color: #ccc;
+}
+matches, terms {
+    color: #505050;
+    color: #777;
+}
+tr td:first-of-type {
+    color: #aaa;
+}
+tr.hr {
+    background-color: #888;
+}
+#top ol li:not(:last-of-type) table {
+    border-bottom-color: #888;
+}
+#sidebar, #resizer {
+    background-color: #343436;
+    background-color: #444;
+}
+#resizer {
+    background-color: #323232;
+}
+#sidebar button {
+    background-color: #575757;
+    border-color: #808080;
+    color: #ededed;
+}

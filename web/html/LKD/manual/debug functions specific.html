@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>debug functions - specific</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="LKD">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree_li.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../manual_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ul>
+	<li><details>
+		<summary><!--
+			--><matches><span>[7]</span><span> = {1,2,3,4,5,6,7}</span></matches><!--
+			--><regex></regex>
+		</summary>
+		<ol>
+			<li value="1"><table>
+				<tr>
+					<td><span>317</span><span>-</span></td>
+					<td>debug_object_init</td>
+				</tr>
+				<tr>
+					<td><span>318</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>whenever the initialization function of a real<h> object </h>is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>319</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects</h> it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+				</tr>
+				<tr>
+					<td><span>320</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+				</tr>
+			</table></li>
+			<li value="2"><table>
+				<tr>
+					<td><span>321</span><span>-</span></td>
+					<td>debug_object_init_on_stack</td>
+				</tr>
+				<tr>
+					<td><span>322</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>whenever the initialization function of a real<h> object </h>which resides on the stack is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>323</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects</h> it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+				</tr>
+				<tr>
+					<td><span>324</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+				</tr>
+				<tr>
+					<td><span>325</span><span>-</span></td>
+					<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+				</tr>
+			</table></li>
+			<li value="3"><table>
+				<tr>
+					<td><span>326</span><span>-</span></td>
+					<td>debug_object_activate</td>
+				</tr>
+				<tr>
+					<td><span>327</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>whenever the activation function of a real<h> object </h>is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>328</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects</h> it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+				</tr>
+				<tr>
+					<td><span>329</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+				</tr>
+				<tr>
+					<td><span>330</span><span>-</span></td>
+					<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+				</tr>
+			</table></li>
+			<li value="4"><table>
+				<tr>
+					<td><span>331</span><span>-</span></td>
+					<td>debug_object_deactivate</td>
+				</tr>
+				<tr>
+					<td><span>332</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>whenever the deactivation function of a real<h> object </h>is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>333</span><span>-</span></td>
+					<td><h>When the real object is </h><h>tracked by debugobjects</h> it is checked, whether the object can be deactivated. Deactivating is not allowed for untracked or destroyed objects.</td>
+				</tr>
+				<tr>
+					<td><span>334</span><span>-</span></td>
+					<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+				</tr>
+			</table></li>
+			<li value="5"><table>
+				<tr>
+					<td><span>335</span><span>-</span></td>
+					<td>debug_object_destroy</td>
+				</tr>
+				<tr>
+					<td><span>336</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>to mark an<h> object </h>destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>337</span><span>-</span></td>
+					<td><h>When the real object is </h><h>tracked by debugobjects</h> it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_destroy function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real destruction of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+				</tr>
+				<tr>
+					<td><span>338</span><span>-</span></td>
+					<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+				</tr>
+			</table></li>
+			<li value="6"><table>
+				<tr>
+					<td><span>339</span><span>-</span></td>
+					<td>debug_object_free</td>
+				</tr>
+				<tr>
+					<td><span>340</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>before an<h> object </h>is freed.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>341</span><span>-</span></td>
+					<td><h>When the real object is </h><h>tracked by debugobjects</h> it is checked, whether the object can be freed. Free is not allowed for active objects. When debugobjects detects an error, then it calls the fixup_free function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real free of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+				</tr>
+				<tr>
+					<td><span>342</span><span>-</span></td>
+					<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+				</tr>
+			</table></li>
+			<li value="7"><table>
+				<tr>
+					<td><span>343</span><span>-</span></td>
+					<td>debug_object_assert_init</td>
+				</tr>
+				<tr>
+					<td><span>344</span><span>-</span></td>
+					<td><h><c></c>This function is called </h>to assert that an<h> object </h>has been initialized.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>345</span><span>-</span></td>
+					<td><h>When the real object is </h>not <h>tracked by debugobjects</h>, it calls fixup_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE. The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+				</tr>
+				<tr>
+					<td><span>346</span><span>-</span></td>
+					<td>When the real object is already tracked by debugobjects it is ignored.</td>
+				</tr>
+			</table></li>
+		</ol>
+	</details></li>
+	<li><details>
+		<summary><!--
+			--><matches><span>[5]</span><span> = {1,2,3,5,6}</span></matches><!--
+			--><regex>it is checked, whether the object can be <m>word</m>. <m>word</m> is not allowed for active <m>*</m>objects. When debugobjects detects an error, then it calls the fixup_<m>word</m> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real <m>word</m> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</regex>
+		</summary>
+		<ol>
+			<li value="1"><table>
+				<tr>
+					<td><span>317</span><span>-</span></td>
+					<td>debug_object_init</td>
+				</tr>
+				<tr>
+					<td><span>318</span><span>-</span></td>
+					<td><h>This function is called </h>whenever the initialization function of a real<h> object </h>is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>319</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects <c>it is checked, whether the object can be </c></h>initialized<h><c>. </c></h>Initializing<h><c> is not allowed for active </c></h>and destroyed <h><c>objects. When debugobjects detects an error, then it calls the fixup_</c></h>init<h><c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c></h>initialization<h><c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>320</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+				</tr>
+			</table></li>
+			<li value="2"><table>
+				<tr>
+					<td><span>321</span><span>-</span></td>
+					<td>debug_object_init_on_stack</td>
+				</tr>
+				<tr>
+					<td><span>322</span><span>-</span></td>
+					<td><h>This function is called </h>whenever the initialization function of a real<h> object </h>which resides on the stack is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>323</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects <c>it is checked, whether the object can be </c></h>initialized<h><c>. </c></h>Initializing<h><c> is not allowed for active </c></h>and destroyed <h><c>objects. When debugobjects detects an error, then it calls the fixup_</c></h>init<h><c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c></h>initialization<h><c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>324</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+				</tr>
+				<tr>
+					<td><span>325</span><span>-</span></td>
+					<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+				</tr>
+			</table></li>
+			<li value="3"><table>
+				<tr>
+					<td><span>326</span><span>-</span></td>
+					<td>debug_object_activate</td>
+				</tr>
+				<tr>
+					<td><span>327</span><span>-</span></td>
+					<td><h>This function is called </h>whenever the activation function of a real<h> object </h>is called.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>328</span><span>-</span></td>
+					<td><h>When the real object is </h>already <h>tracked by debugobjects <c>it is checked, whether the object can be </c></h>activated<h><c>. </c></h>Activating<h><c> is not allowed for active </c></h>and destroyed <h><c>objects. When debugobjects detects an error, then it calls the fixup_</c></h>activate<h><c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c></h>activation<h><c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>329</span><span>-</span></td>
+					<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+				</tr>
+				<tr>
+					<td><span>330</span><span>-</span></td>
+					<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+				</tr>
+			</table></li>
+			<li value="5"><table>
+				<tr>
+					<td><span>335</span><span>-</span></td>
+					<td>debug_object_destroy</td>
+				</tr>
+				<tr>
+					<td><span>336</span><span>-</span></td>
+					<td><h>This function is called </h>to mark an<h> object </h>destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>337</span><span>-</span></td>
+					<td><h>When the real object is </h><h>tracked by debugobjects <c>it is checked, whether the object can be </c></h>destroyed<h><c>. </c></h>Destruction<h><c> is not allowed for active </c></h>and destroyed <h><c>objects. When debugobjects detects an error, then it calls the fixup_</c></h>destroy<h><c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c></h>destruction<h><c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>338</span><span>-</span></td>
+					<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+				</tr>
+			</table></li>
+			<li value="6"><table>
+				<tr>
+					<td><span>339</span><span>-</span></td>
+					<td>debug_object_free</td>
+				</tr>
+				<tr>
+					<td><span>340</span><span>-</span></td>
+					<td><h>This function is called </h>before an<h> object </h>is freed.<h></h></td>
+				</tr>
+				<tr>
+					<td><span>341</span><span>-</span></td>
+					<td><h>When the real object is </h><h>tracked by debugobjects <c>it is checked, whether the object can be </c></h>freed<h><c>. </c></h>Free<h><c> is not allowed for active </c></h><h><c>objects. When debugobjects detects an error, then it calls the fixup_</c></h>free<h><c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c></h>free<h><c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>342</span><span>-</span></td>
+					<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+				</tr>
+			</table></li>
+		</ol>
+	</details></li>
+	<li><details>
+		<summary><!--
+			--><matches><span>[3]</span><span> = {1,2,3}</span></matches><!--
+			--><regex>whenever the <m>word</m> function of a real <m>*</m> is called.<m> </m><m>*</m>already<m>*</m>and destroyed<m>*</m><m> </m>When the real object is not yet tracked by debugobjects</regex>
+		</summary>
+		<ol>
+			<li value="1"><table>
+				<tr>
+					<td><span>317</span><span>-</span></td>
+					<td>debug_object_init</td>
+				</tr>
+				<tr>
+					<td><span>318</span><span>-</span></td>
+					<td><h>This function is called <c>whenever the </c></h>initialization<h><c> function of a real </c>object</h><h><c> is called.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>319</span><span>-</span></td>
+					<td><h><c></c>When the real object is <c>already</c> tracked by debugobjects it is checked, whether the object can be </h>initialized<h>. </h>Initializing<h> is not allowed for active <c>and destroyed</c> objects. When debugobjects detects an error, then it calls the fixup_</h>init<h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </h>initialization<h> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>320</span><span>-</span></td>
+					<td><h><c>When the real object is not yet tracked by debugobjects</c></h>, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+				</tr>
+			</table></li>
+			<li value="2"><table>
+				<tr>
+					<td><span>321</span><span>-</span></td>
+					<td>debug_object_init_on_stack</td>
+				</tr>
+				<tr>
+					<td><span>322</span><span>-</span></td>
+					<td><h>This function is called <c>whenever the </c></h>initialization<h><c> function of a real </c>object</h> which resides on the stack<h><c> is called.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>323</span><span>-</span></td>
+					<td><h><c></c>When the real object is <c>already</c> tracked by debugobjects it is checked, whether the object can be </h>initialized<h>. </h>Initializing<h> is not allowed for active <c>and destroyed</c> objects. When debugobjects detects an error, then it calls the fixup_</h>init<h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </h>initialization<h> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>324</span><span>-</span></td>
+					<td><h><c>When the real object is not yet tracked by debugobjects</c></h> debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+				</tr>
+				<tr>
+					<td><span>325</span><span>-</span></td>
+					<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+				</tr>
+			</table></li>
+			<li value="3"><table>
+				<tr>
+					<td><span>326</span><span>-</span></td>
+					<td>debug_object_activate</td>
+				</tr>
+				<tr>
+					<td><span>327</span><span>-</span></td>
+					<td><h>This function is called <c>whenever the </c></h>activation<h><c> function of a real </c>object</h><h><c> is called.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>328</span><span>-</span></td>
+					<td><h><c></c>When the real object is <c>already</c> tracked by debugobjects it is checked, whether the object can be </h>activated<h>. </h>Activating<h> is not allowed for active <c>and destroyed</c> objects. When debugobjects detects an error, then it calls the fixup_</h>activate<h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </h>activation<h> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>329</span><span>-</span></td>
+					<td><h><c>When the real object is not yet tracked by debugobjects</c></h> then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+				</tr>
+				<tr>
+					<td><span>330</span><span>-</span></td>
+					<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+				</tr>
+			</table></li>
+		</ol>
+	</details></li>
+	<li><details>
+		<summary><!--
+			--><matches><span>[2]</span><span> = {1,2}</span></matches><!--
+			--><regex>initialization<m>*</m><m> </m><m>*</m>initialized<m>*</m>Initializing<m>*</m>init<m>*</m>initialization<m>*</m><m> </m><m>*</m>debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is <m>(not )?</m>on the callers stack.</regex>
+		</summary>
+		<ol>
+			<li value="1"><table>
+				<tr>
+					<td><span>317</span><span>-</span></td>
+					<td>debug_object_init</td>
+				</tr>
+				<tr>
+					<td><span>318</span><span>-</span></td>
+					<td><h>This function is called whenever the <c>initialization</c> function of a real object</h><h> is called.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>319</span><span>-</span></td>
+					<td><h><c></c>When the real object is already tracked by debugobjects it is checked, whether the object can be <c>initialized</c>. <c>Initializing</c> is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_<c>init</c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real <c>initialization</c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>320</span><span>-</span></td>
+					<td><h><c></c>When the real object is not yet tracked by debugobjects</h>,<h> <c>debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is </c></h>not <h><c>on the callers stack.</c></h> If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+				</tr>
+			</table></li>
+			<li value="2"><table>
+				<tr>
+					<td><span>321</span><span>-</span></td>
+					<td>debug_object_init_on_stack</td>
+				</tr>
+				<tr>
+					<td><span>322</span><span>-</span></td>
+					<td><h>This function is called whenever the <c>initialization</c> function of a real object</h> which resides on the stack<h> is called.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>323</span><span>-</span></td>
+					<td><h><c></c>When the real object is already tracked by debugobjects it is checked, whether the object can be <c>initialized</c>. <c>Initializing</c> is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_<c>init</c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real <c>initialization</c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.<c></c></h></td>
+				</tr>
+				<tr>
+					<td><span>324</span><span>-</span></td>
+					<td><h><c></c>When the real object is not yet tracked by debugobjects</h><h> <c>debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is </c></h><h><c>on the callers stack.</c></h></td>
+				</tr>
+				<tr>
+					<td><span>325</span><span>-</span></td>
+					<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+				</tr>
+			</table></li>
+		</ol>
+	</details></li>
+	</ul></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

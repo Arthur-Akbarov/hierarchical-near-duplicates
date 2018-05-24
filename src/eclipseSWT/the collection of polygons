@@ -1,0 +1,174 @@
+add
+public void add(int[] pointArray)
+Adds the given polygon to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+pointArray - points that describe the polygon to merge with the receiver
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+
+add
+public void add(Rectangle rect)
+Adds the given rectangle to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+rect - the rectangle to merge with the receiver
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+
+add
+public void add(int x,
+                int y,
+                int width,
+                int height)
+Adds the given rectangle to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+x - the x coordinate of the rectangle
+y - the y coordinate of the rectangle
+width - the width coordinate of the rectangle
+height - the height coordinate of the rectangle
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.1
+
+add
+public void add(Region region)
+Adds all of the polygons which make up the area covered by the argument to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+region - the region to merge
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the argument has been disposed
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+
+getBounds
+public Rectangle getBounds()
+Returns a rectangle which represents the rectangular union of the collection of polygons the receiver maintains to describe its area.
+Returns:
+a bounding rectangle for the region
+Throws:
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+See Also:
+Rectangle.union(org.eclipse.swt.graphics.Rectangle)
+
+intersect
+public void intersect(Rectangle rect)
+Intersects the given rectangle to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+rect - the rectangle to intersect with the receiver
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+
+intersect
+public void intersect(int x,
+                      int y,
+                      int width,
+                      int height)
+Intersects the given rectangle to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+x - the x coordinate of the rectangle
+y - the y coordinate of the rectangle
+width - the width coordinate of the rectangle
+height - the height coordinate of the rectangle
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.1
+
+intersect
+public void intersect(Region region)
+Intersects all of the polygons which make up the area covered by the argument to the collection of polygons the receiver maintains to describe its area.
+Parameters:
+region - the region to intersect
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the argument has been disposed
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+
+subtract
+public void subtract(int[] pointArray)
+Subtracts the given polygon from the collection of polygons the receiver maintains to describe its area.
+Parameters:
+pointArray - points that describe the polygon to merge with the receiver
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+
+subtract
+public void subtract(Rectangle rect)
+Subtracts the given rectangle from the collection of polygons the receiver maintains to describe its area.
+Parameters:
+rect - the rectangle to subtract from the receiver
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+
+subtract
+public void subtract(int x,
+                     int y,
+                     int width,
+                     int height)
+Subtracts the given rectangle from the collection of polygons the receiver maintains to describe its area.
+Parameters:
+x - the x coordinate of the rectangle
+y - the y coordinate of the rectangle
+width - the width coordinate of the rectangle
+height - the height coordinate of the rectangle
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.1
+
+subtract
+public void subtract(Region region)
+Subtracts all of the polygons which make up the area covered by the argument from the collection of polygons the receiver maintains to describe its area.
+Parameters:
+region - the region to subtract
+Throws:
+java.lang.IllegalArgumentException -
+ERROR_NULL_ARGUMENT - if the argument is null
+ERROR_INVALID_ARGUMENT - if the argument has been disposed
+SWTException -
+ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed
+since. :
+3.0
+

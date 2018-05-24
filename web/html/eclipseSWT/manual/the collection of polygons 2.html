@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the collection of polygons 2</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="eclipseSWT">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree_li.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../manual_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ul>
+	<li><details>
+		<summary><!--
+			--><matches><span>[12]</span><span> = {1,2,3,4,5,6,7,8,9,10,&#8203;11,12}</span></matches><!--
+			--><regex>the collection of polygons the receiver maintains to describe its area.</regex>
+		</summary>
+		<ul>
+			<li><details>
+				<summary><!--
+					--><matches><span>[4]</span><span> = {1,2,3,4}</span></matches><!--
+					--><regex>Adds <m>*</m> to <c>the collection of polygons the receiver maintains to describe its area.</c></regex>
+				</summary>
+				<ul>
+					<li><details>
+						<summary><!--
+							--><matches><span>[2]</span><span> = {1,4}</span></matches><!--
+							--><regex><c>Adds </c><m>*</m> polygon<m>*</m><c> to the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ul>
+							<li><details>
+								<summary><!--
+									--><matches><span>[1]</span><span> = {4}</span></matches><!--
+									--><regex><c>Adds </c>all of the<c> polygon</c>s which make up the area covered by the argument<c> to the collection of polygons the receiver maintains to describe its area.</c></regex>
+								</summary>
+								<ol>
+									<li value="4"><table>
+										<tr>
+											<td><span>21122</span><span>-</span></td>
+											<td>add</td>
+										</tr>
+										<tr>
+											<td><span>21123</span><span>-</span></td>
+											<td>public void add(Region region)</td>
+										</tr>
+										<tr>
+											<td><span>21124</span><span>-</span></td>
+											<td><h><c>Adds all of the polygons which make up the area covered by the argument to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>21125</span><span>-</span></td>
+											<td>Parameters:</td>
+										</tr>
+										<tr>
+											<td><span>21126</span><span>-</span></td>
+											<td>region - the region to merge</td>
+										</tr>
+										<tr>
+											<td><span>21127</span><span>-</span></td>
+											<td>Throws:</td>
+										</tr>
+										<tr>
+											<td><span>21128</span><span>-</span></td>
+											<td>java.lang.IllegalArgumentException -</td>
+										</tr>
+										<tr>
+											<td><span>21129</span><span>-</span></td>
+											<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+										</tr>
+										<tr>
+											<td><span>21130</span><span>-</span></td>
+											<td>ERROR_INVALID_ARGUMENT - if the argument has been disposed</td>
+										</tr>
+										<tr>
+											<td><span>21131</span><span>-</span></td>
+											<td>SWTException -</td>
+										</tr>
+										<tr>
+											<td><span>21132</span><span>-</span></td>
+											<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+										</tr>
+									</table></li>
+								</ol>
+							</details></li>
+							<li><details>
+								<summary><!--
+									--><matches><span>[1]</span><span> = {1}</span></matches><!--
+									--><regex><c>Adds </c>the given<c> polygon</c><c> to the collection of polygons the receiver maintains to describe its area.</c></regex>
+								</summary>
+								<ol>
+									<li value="1"><table>
+										<tr>
+											<td><span>21078</span><span>-</span></td>
+											<td>add</td>
+										</tr>
+										<tr>
+											<td><span>21079</span><span>-</span></td>
+											<td>public void add(int[] pointArray)</td>
+										</tr>
+										<tr>
+											<td><span>21080</span><span>-</span></td>
+											<td><h><c>Adds the given polygon to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>21081</span><span>-</span></td>
+											<td>Parameters:</td>
+										</tr>
+										<tr>
+											<td><span>21082</span><span>-</span></td>
+											<td>pointArray - points that describe the polygon to merge with the receiver</td>
+										</tr>
+										<tr>
+											<td><span>21083</span><span>-</span></td>
+											<td>Throws:</td>
+										</tr>
+										<tr>
+											<td><span>21084</span><span>-</span></td>
+											<td>java.lang.IllegalArgumentException -</td>
+										</tr>
+										<tr>
+											<td><span>21085</span><span>-</span></td>
+											<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+										</tr>
+										<tr>
+											<td><span>21086</span><span>-</span></td>
+											<td>SWTException -</td>
+										</tr>
+										<tr>
+											<td><span>21087</span><span>-</span></td>
+											<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+										</tr>
+										<tr>
+											<td><span>21088</span><span>-</span></td>
+											<td>since. :</td>
+										</tr>
+										<tr>
+											<td><span>21089</span><span>-</span></td>
+											<td>3.0</td>
+										</tr>
+									</table></li>
+								</ol>
+							</details></li>
+						</ol>
+					</details></li>
+					<li><details>
+						<summary><!--
+							--><matches><span>[2]</span><span> = {2,3}</span></matches><!--
+							--><regex><c>Adds </c>the given rectangle<c> to the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ol>
+							<li value="2"><table>
+								<tr>
+									<td><span>21091</span><span>-</span></td>
+									<td>add</td>
+								</tr>
+								<tr>
+									<td><span>21092</span><span>-</span></td>
+									<td>public void add(Rectangle rect)</td>
+								</tr>
+								<tr>
+									<td><span>21093</span><span>-</span></td>
+									<td><h><c>Adds the given rectangle to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21094</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21095</span><span>-</span></td>
+									<td>rect - the rectangle to merge with the receiver</td>
+								</tr>
+								<tr>
+									<td><span>21096</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21097</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21098</span><span>-</span></td>
+									<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+								</tr>
+								<tr>
+									<td><span>21099</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21100</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21101</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+							</table></li>
+							<li value="3"><table>
+								<tr>
+									<td><span>21103</span><span>-</span></td>
+									<td>add</td>
+								</tr>
+								<tr>
+									<td><span>21104</span><span>-</span></td>
+									<td>public void add(int x,</td>
+								</tr>
+								<tr>
+									<td><span>21105</span><span>-</span></td>
+									<td>                int y,</td>
+								</tr>
+								<tr>
+									<td><span>21106</span><span>-</span></td>
+									<td>                int width,</td>
+								</tr>
+								<tr>
+									<td><span>21107</span><span>-</span></td>
+									<td>                int height)</td>
+								</tr>
+								<tr>
+									<td><span>21108</span><span>-</span></td>
+									<td><h><c>Adds the given rectangle to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21109</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21110</span><span>-</span></td>
+									<td>x - the x coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21111</span><span>-</span></td>
+									<td>y - the y coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21112</span><span>-</span></td>
+									<td>width - the width coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21113</span><span>-</span></td>
+									<td>height - the height coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21114</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21115</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21116</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21117</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21118</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21119</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21120</span><span>-</span></td>
+									<td>3.1</td>
+								</tr>
+							</table></li>
+						</ol>
+					</details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches><span>[4]</span><span> = {9,10,11,12}</span></matches><!--
+					--><regex>Subtracts <m>*</m> <c>the collection of polygons the receiver maintains to describe its area.</c></regex>
+				</summary>
+				<ul>
+					<li><details>
+						<summary><!--
+							--><matches><span>[2]</span><span> = {9,12}</span></matches><!--
+							--><regex><c>Subtracts </c><m>*</m> polygon<m>*</m> from<c> the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ul>
+							<li><details>
+								<summary><!--
+									--><matches><span>[1]</span><span> = {12}</span></matches><!--
+									--><regex><c>Subtracts </c>all of the<c> polygon</c>s which make up the area covered by the argument<c> from the collection of polygons the receiver maintains to describe its area.</c></regex>
+								</summary>
+								<ol>
+									<li value="12"><table>
+										<tr>
+											<td><span>21337</span><span>-</span></td>
+											<td>subtract</td>
+										</tr>
+										<tr>
+											<td><span>21338</span><span>-</span></td>
+											<td>public void subtract(Region region)</td>
+										</tr>
+										<tr>
+											<td><span>21339</span><span>-</span></td>
+											<td><h><c>Subtracts all of the polygons which make up the area covered by the argument from the collection of polygons the receiver maintains to describe its area.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>21340</span><span>-</span></td>
+											<td>Parameters:</td>
+										</tr>
+										<tr>
+											<td><span>21341</span><span>-</span></td>
+											<td>region - the region to subtract</td>
+										</tr>
+										<tr>
+											<td><span>21342</span><span>-</span></td>
+											<td>Throws:</td>
+										</tr>
+										<tr>
+											<td><span>21343</span><span>-</span></td>
+											<td>java.lang.IllegalArgumentException -</td>
+										</tr>
+										<tr>
+											<td><span>21344</span><span>-</span></td>
+											<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+										</tr>
+										<tr>
+											<td><span>21345</span><span>-</span></td>
+											<td>ERROR_INVALID_ARGUMENT - if the argument has been disposed</td>
+										</tr>
+										<tr>
+											<td><span>21346</span><span>-</span></td>
+											<td>SWTException -</td>
+										</tr>
+										<tr>
+											<td><span>21347</span><span>-</span></td>
+											<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+										</tr>
+										<tr>
+											<td><span>21348</span><span>-</span></td>
+											<td>since. :</td>
+										</tr>
+										<tr>
+											<td><span>21349</span><span>-</span></td>
+											<td>3.0</td>
+										</tr>
+									</table></li>
+								</ol>
+							</details></li>
+							<li><details>
+								<summary><!--
+									--><matches><span>[1]</span><span> = {9}</span></matches><!--
+									--><regex><c>Subtracts </c>the given<c> polygon</c><c> from the collection of polygons the receiver maintains to describe its area.</c></regex>
+								</summary>
+								<ol>
+									<li value="9"><table>
+										<tr>
+											<td><span>21291</span><span>-</span></td>
+											<td>subtract</td>
+										</tr>
+										<tr>
+											<td><span>21292</span><span>-</span></td>
+											<td>public void subtract(int[] pointArray)</td>
+										</tr>
+										<tr>
+											<td><span>21293</span><span>-</span></td>
+											<td><h><c>Subtracts the given polygon from the collection of polygons the receiver maintains to describe its area.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>21294</span><span>-</span></td>
+											<td>Parameters:</td>
+										</tr>
+										<tr>
+											<td><span>21295</span><span>-</span></td>
+											<td>pointArray - points that describe the polygon to merge with the receiver</td>
+										</tr>
+										<tr>
+											<td><span>21296</span><span>-</span></td>
+											<td>Throws:</td>
+										</tr>
+										<tr>
+											<td><span>21297</span><span>-</span></td>
+											<td>java.lang.IllegalArgumentException -</td>
+										</tr>
+										<tr>
+											<td><span>21298</span><span>-</span></td>
+											<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+										</tr>
+										<tr>
+											<td><span>21299</span><span>-</span></td>
+											<td>SWTException -</td>
+										</tr>
+										<tr>
+											<td><span>21300</span><span>-</span></td>
+											<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+										</tr>
+										<tr>
+											<td><span>21301</span><span>-</span></td>
+											<td>since. :</td>
+										</tr>
+										<tr>
+											<td><span>21302</span><span>-</span></td>
+											<td>3.0</td>
+										</tr>
+									</table></li>
+								</ol>
+							</details></li>
+						</ol>
+					</details></li>
+					<li><details>
+						<summary><!--
+							--><matches><span>[2]</span><span> = {10,11}</span></matches><!--
+							--><regex><c>Subtracts </c>the given rectangle from<c> the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ol>
+							<li value="10"><table>
+								<tr>
+									<td><span>21304</span><span>-</span></td>
+									<td>subtract</td>
+								</tr>
+								<tr>
+									<td><span>21305</span><span>-</span></td>
+									<td>public void subtract(Rectangle rect)</td>
+								</tr>
+								<tr>
+									<td><span>21306</span><span>-</span></td>
+									<td><h><c>Subtracts the given rectangle from the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21307</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21308</span><span>-</span></td>
+									<td>rect - the rectangle to subtract from the receiver</td>
+								</tr>
+								<tr>
+									<td><span>21309</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21310</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21311</span><span>-</span></td>
+									<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+								</tr>
+								<tr>
+									<td><span>21312</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21313</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21314</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21315</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21316</span><span>-</span></td>
+									<td>3.0</td>
+								</tr>
+							</table></li>
+							<li value="11"><table>
+								<tr>
+									<td><span>21318</span><span>-</span></td>
+									<td>subtract</td>
+								</tr>
+								<tr>
+									<td><span>21319</span><span>-</span></td>
+									<td>public void subtract(int x,</td>
+								</tr>
+								<tr>
+									<td><span>21320</span><span>-</span></td>
+									<td>                     int y,</td>
+								</tr>
+								<tr>
+									<td><span>21321</span><span>-</span></td>
+									<td>                     int width,</td>
+								</tr>
+								<tr>
+									<td><span>21322</span><span>-</span></td>
+									<td>                     int height)</td>
+								</tr>
+								<tr>
+									<td><span>21323</span><span>-</span></td>
+									<td><h><c>Subtracts the given rectangle from the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21324</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21325</span><span>-</span></td>
+									<td>x - the x coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21326</span><span>-</span></td>
+									<td>y - the y coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21327</span><span>-</span></td>
+									<td>width - the width coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21328</span><span>-</span></td>
+									<td>height - the height coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21329</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21330</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21331</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21332</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21333</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21334</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21335</span><span>-</span></td>
+									<td>3.1</td>
+								</tr>
+							</table></li>
+						</ol>
+					</details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches><span>[3]</span><span> = {6,7,8}</span></matches><!--
+					--><regex>Intersects <m>*</m> <c>the collection of polygons the receiver maintains to describe its area.</c></regex>
+				</summary>
+				<ul>
+					<li><details>
+						<summary><!--
+							--><matches><span>[2]</span><span> = {6,7}</span></matches><!--
+							--><regex><c>Intersects </c>the given rectangle to<c> the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ol>
+							<li value="6"><table>
+								<tr>
+									<td><span>21193</span><span>-</span></td>
+									<td>intersect</td>
+								</tr>
+								<tr>
+									<td><span>21194</span><span>-</span></td>
+									<td>public void intersect(Rectangle rect)</td>
+								</tr>
+								<tr>
+									<td><span>21195</span><span>-</span></td>
+									<td><h><c>Intersects the given rectangle to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21196</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21197</span><span>-</span></td>
+									<td>rect - the rectangle to intersect with the receiver</td>
+								</tr>
+								<tr>
+									<td><span>21198</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21199</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21200</span><span>-</span></td>
+									<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+								</tr>
+								<tr>
+									<td><span>21201</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21202</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21203</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21204</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21205</span><span>-</span></td>
+									<td>3.0</td>
+								</tr>
+							</table></li>
+							<li value="7"><table>
+								<tr>
+									<td><span>21207</span><span>-</span></td>
+									<td>intersect</td>
+								</tr>
+								<tr>
+									<td><span>21208</span><span>-</span></td>
+									<td>public void intersect(int x,</td>
+								</tr>
+								<tr>
+									<td><span>21209</span><span>-</span></td>
+									<td>                      int y,</td>
+								</tr>
+								<tr>
+									<td><span>21210</span><span>-</span></td>
+									<td>                      int width,</td>
+								</tr>
+								<tr>
+									<td><span>21211</span><span>-</span></td>
+									<td>                      int height)</td>
+								</tr>
+								<tr>
+									<td><span>21212</span><span>-</span></td>
+									<td><h><c>Intersects the given rectangle to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21213</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21214</span><span>-</span></td>
+									<td>x - the x coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21215</span><span>-</span></td>
+									<td>y - the y coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21216</span><span>-</span></td>
+									<td>width - the width coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21217</span><span>-</span></td>
+									<td>height - the height coordinate of the rectangle</td>
+								</tr>
+								<tr>
+									<td><span>21218</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21219</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21220</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the rectangle's width or height is negative</td>
+								</tr>
+								<tr>
+									<td><span>21221</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21222</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21223</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21224</span><span>-</span></td>
+									<td>3.1</td>
+								</tr>
+							</table></li>
+						</ol>
+					</details></li>
+					<li><details>
+						<summary><!--
+							--><matches><span>[1]</span><span> = {8}</span></matches><!--
+							--><regex><c>Intersects </c>all of the polygons which make up the area covered by the argument to<c> the collection of polygons the receiver maintains to describe its area.</c></regex>
+						</summary>
+						<ol>
+							<li value="8"><table>
+								<tr>
+									<td><span>21226</span><span>-</span></td>
+									<td>intersect</td>
+								</tr>
+								<tr>
+									<td><span>21227</span><span>-</span></td>
+									<td>public void intersect(Region region)</td>
+								</tr>
+								<tr>
+									<td><span>21228</span><span>-</span></td>
+									<td><h><c>Intersects all of the polygons which make up the area covered by the argument to the collection of polygons the receiver maintains to describe its area.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>21229</span><span>-</span></td>
+									<td>Parameters:</td>
+								</tr>
+								<tr>
+									<td><span>21230</span><span>-</span></td>
+									<td>region - the region to intersect</td>
+								</tr>
+								<tr>
+									<td><span>21231</span><span>-</span></td>
+									<td>Throws:</td>
+								</tr>
+								<tr>
+									<td><span>21232</span><span>-</span></td>
+									<td>java.lang.IllegalArgumentException -</td>
+								</tr>
+								<tr>
+									<td><span>21233</span><span>-</span></td>
+									<td>ERROR_NULL_ARGUMENT - if the argument is null</td>
+								</tr>
+								<tr>
+									<td><span>21234</span><span>-</span></td>
+									<td>ERROR_INVALID_ARGUMENT - if the argument has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21235</span><span>-</span></td>
+									<td>SWTException -</td>
+								</tr>
+								<tr>
+									<td><span>21236</span><span>-</span></td>
+									<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+								</tr>
+								<tr>
+									<td><span>21237</span><span>-</span></td>
+									<td>since. :</td>
+								</tr>
+								<tr>
+									<td><span>21238</span><span>-</span></td>
+									<td>3.0</td>
+								</tr>
+							</table></li>
+						</ol>
+					</details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches><span>[1]</span><span> = {5}</span></matches><!--
+					--><regex>Returns a rectangle which represents the rectangular union of <c>the collection of polygons the receiver maintains to describe its area.</c></regex>
+				</summary>
+				<ol>
+					<li value="5"><table>
+						<tr>
+							<td><span>21172</span><span>-</span></td>
+							<td>getBounds</td>
+						</tr>
+						<tr>
+							<td><span>21173</span><span>-</span></td>
+							<td>public Rectangle getBounds()</td>
+						</tr>
+						<tr>
+							<td><span>21174</span><span>-</span></td>
+							<td><h><c>Returns a rectangle which represents the rectangular union of the collection of polygons the receiver maintains to describe its area.</c></h></td>
+						</tr>
+						<tr>
+							<td><span>21175</span><span>-</span></td>
+							<td>Returns:</td>
+						</tr>
+						<tr>
+							<td><span>21176</span><span>-</span></td>
+							<td>a bounding rectangle for the region</td>
+						</tr>
+						<tr>
+							<td><span>21177</span><span>-</span></td>
+							<td>Throws:</td>
+						</tr>
+						<tr>
+							<td><span>21178</span><span>-</span></td>
+							<td>SWTException -</td>
+						</tr>
+						<tr>
+							<td><span>21179</span><span>-</span></td>
+							<td>ERROR_GRAPHIC_DISPOSED - if the receiver has been disposed</td>
+						</tr>
+						<tr>
+							<td><span>21180</span><span>-</span></td>
+							<td>See Also:</td>
+						</tr>
+						<tr>
+							<td><span>21181</span><span>-</span></td>
+							<td>Rectangle.union(org.eclipse.swt.graphics.Rectangle)</td>
+						</tr>
+					</table></li>
+				</ol>
+			</details></li>
+		</ol>
+	</details></li>
+	</ul></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

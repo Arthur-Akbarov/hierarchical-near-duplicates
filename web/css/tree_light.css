@@ -1,0 +1,81 @@
+body {
+    background-color: #fff;
+    color: #383838;
+    color: #31363c;
+    color: #222;
+}
+regex {
+    color: #43abc9;
+    color: #2888b4;
+    color: #1466bb;
+    color: #66b;
+    color: darkblue;
+    color: #000080;
+    color: #a9b7c6;
+    color: #95a4b4;
+    color: #000;
+}
+m {
+    color: #f26;
+    color: #cc1950;
+    color: #FF00FF;
+    color: #AE12F6;
+}
+regex c {
+    color: #95a4b4;
+    color: #43abc9;
+    color: #66b;
+    color: #107896;
+    color: #058;
+    color: #1466bb;
+    color: #0000f0;
+    color: #1466ff;
+}
+term c {
+    color: #00b359;
+}
+h {
+/*    color: #00b359;
+    color: #EF9B0F;
+    color: #ffba00;*/
+    background-color: #FFDF00;
+    background-color: #FFFF00;
+    background-color: #ffff4d;
+}
+td c, h c {
+    color: #292;
+    color: #1466ff;
+}
+
+
+summary {
+    color: #666;
+}
+summary span, term {
+    color: #222;
+}
+matches, terms {
+    color: #383838;
+}
+tr td:first-of-type {
+    color: #444;
+}
+tr.hr {
+    background-color: #666;
+}
+#top ol li:not(:last-of-type) table {
+    border-bottom-color: #666;
+}
+#sidebar, #resizer {
+    background-color: #666;
+}
+#resizer {
+    background-color: #aaa;
+}
+#sidebar button {
+    background-color: #575757;
+    border-color: #999;
+}
+#sidebar button {
+    color: #ededed;
+}

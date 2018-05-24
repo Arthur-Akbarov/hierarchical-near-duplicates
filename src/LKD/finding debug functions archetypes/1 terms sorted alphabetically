@@ -1,0 +1,62 @@
+Activating is not allowed for active and destroyed objects.
+An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns.
+Deactivating is not allowed for untracked or destroyed objects.
+Destruction is not allowed for active and destroyed objects.
+E.g. it can deactivate an active object in order to prevent damage to the subsystem.
+E.g. it can deactivate an active object in order to prevent damage to the subsystem.
+E.g. it can deactivate an active object in order to prevent damage to the subsystem.
+E.g. it can deactivate an active object in order to prevent damage to the subsystem.
+E.g. it can deactivate an active object in order to prevent damage to the subsystem.
+Free is not allowed for active objects.
+If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed.
+Initializing is not allowed for active and destroyed objects.
+Initializing is not allowed for active and destroyed objects.
+It verifies that the object is not on the callers stack.
+It verifies that the object is on the callers stack.
+Later usage of the object is detected by the other debug checks.
+Note that debug_object_free removes the object from the tracker.
+Otherwise we keep track of stale objects.
+See next section.
+The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it.
+The fixup function can correct the problem before the real activation of the object happens.
+The fixup function can correct the problem before the real destruction of the object happens.
+The fixup function can correct the problem before the real free of the object happens.
+The fixup function can correct the problem before the real initialization of the object happens.
+The fixup function can correct the problem before the real initialization of the object happens.
+The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.
+The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.
+This function is called before an object is freed.
+This function is called to assert that an object has been initialized.
+This function is called to mark an object destroyed.
+This function is called whenever the activation function of a real object is called.
+This function is called whenever the deactivation function of a real object is called.
+This function is called whenever the initialization function of a real object is called.
+This function is called whenever the initialization function of a real object which resides on the stack is called.
+This is necessary to allow the legitimate activation of statically allocated and initialized objects.
+This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.
+When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller.
+When debugobjects detects an error, then it calls the fixup_destroy function of the object type description structure if provided by the caller.
+When debugobjects detects an error, then it calls the fixup_free function of the object type description structure if provided by the caller.
+When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller.
+When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller.
+When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.
+When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.
+When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.
+When the real object is already tracked by debugobjects it is checked, whether the object can be activated.
+When the real object is already tracked by debugobjects it is checked, whether the object can be initialized.
+When the real object is already tracked by debugobjects it is checked, whether the object can be initialized.
+When the real object is already tracked by debugobjects it is ignored.
+When the real object is not tracked by debugobjects, it calls fixup_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE.
+When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT.
+When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available.
+When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT.
+When the real object is tracked by debugobjects it is checked, whether the object can be deactivated.
+When the real object is tracked by debugobjects it is checked, whether the object can be destroyed.
+When the real object is tracked by debugobjects it is checked, whether the object can be freed.
+debug_object_activate
+debug_object_assert_init
+debug_object_deactivate
+debug_object_destroy
+debug_object_free
+debug_object_init
+debug_object_init_on_stack

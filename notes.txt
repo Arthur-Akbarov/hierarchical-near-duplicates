@@ -1,0 +1,56 @@
+notes
+
+LibreOffice умеет искать по regex =)
+
+Как сгенерировать html по regexes файлам?
+хоть откуда запустить одно из двух
+utils/tree.sh openLDAP
+utils/tree.sh openLDAP "note that"
+
+Сложный случай
+чтобы удалить нечётные вхождения, из папки src/eclipseSWT запустить
+../../utils/auto_tree.awk -v sourceTitle='eclipseSWT' -v removeOdds='1' "removes the listener.re" > ../../web/html/eclipseSWT/auto/"removes the listener".html
+../../utils/manual_tree.awk -v sourceTitle='eclipseSWT' -v removeOdds='1' "removes the listener.re" > ../../web/html/eclipseSWT/manual/"removes the listener".html
+
+Как добавить новый документ в коллекцию?
+создать папки src/documentTitle, web/html/documentTitle
+для создания вспомогательных junctions хоть откуда запустить
+utils/createJunctionsForAllDocs.cmd
+исходный текст документа положить в файл src/documentTitle/input
+рядом положить файлы regexes с расширениями ".re"
+из корня запустить
+utils/input2js.awk src/eclipseSWT/input > web/js/sources/eclipseSWT.js
+utils/input2js.awk src/openLDAP/input > web/js/sources/openLDAP.js
+
+Как генерировать regexes?
+не надо добиваться полноты селектора, достаточно уникальности задаваемой группы
+полнота сущности отражается в контексте manual edition выбором констант A и B для grep-а
+
+Соглашения
+не заканчивать regex на etc., i.e., e.g., чтобы не было неоднозначности в замыкании до term
+auto mode работает case-insensitive, чтобы ничего не упустить на стадии анализа,
+а manual mode работает уже case-sensitive, чтобы отделить {V} от {v} в openLDAP "note that"
+в regexes всегда писать ERE с согласованным case, обе подсветки работают case-sensitive
+
+ещё API документы в нашем репозитории
+Python Request, Intellij Platform Guide
+
+todo
+выделять повтор до границ и по ctrl+d копировать start-end номера строк
+добавить игнор # lines при чтении regexTree в manual_tree.awk, можно даже игнорировать пустые строки
+сделать второе описание дерева по массивам отрезков строк, повторы в одном листе [[209-211], [215-218]]
+подсвечивать номера в sourcePane с помощью добавления/удаления класса, класс раскрасить в light и dark css
+написать Sublime Syntax for my regexes
+заменить (the |) на (the)? в "removes the listener", для этого разобрать ()? случай в highlightERE
+доставить точки в "removes the listener"
+посмотреть как соотносится табличка "It interprets and formats its arguments according" с моими примерами
+
+Обсуждаемое
+как выбирать форму regex, возможно перечислять некоторый список эквивалентных в каждом узле
+в узле дерева (в строке matches) выделить цветами номера точных повторов
+
+Вопросы
+выделять ли узел для одного вхождения, если есть сосед с бОльшим кол-вом вхождений
+пример eclipseSWT "remove listener" первая ветка
+коли не выделять такой узел, то либо смешивать с листьями соседей, либо допускать узел,
+чьи дети могут быть как листья, так и узлы

@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fixup</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="LKD">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../auto_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ol>
+	<li><details>
+		<summary><!--
+			--><matches>38</matches><!--
+			--><regex>fixup</regex>
+		</summary>
+		<ol>
+			<li><details>
+				<summary><!--
+					--><matches>6</matches><!--
+					--><regex>debugobjects<m>*</m> it calls <m>(the |)</m><c>fixup</c>_<m>*</m> the object type description structure <m>(if |)</m>provided by the caller</regex>
+				</summary>
+				<ol>
+					<li><details>
+						<summary><!--
+							--><matches>5</matches><!--
+							--><regex>When the real object is <m>*</m>tracked by <c>debugobjects</c> it is checked, whether the object can be <m>*</m> is not allowed for <m>*</m> objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c><m>*</m> function of<c> the object type description structure </c>if <c>provided by the caller</c>. The fixup function can correct the problem before the real <m>*</m> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</regex>
+						</summary>
+						<ol>
+							<li><details><summary><span>terms</span></summary><ol class="terms">
+								<li><details>
+									<summary><!--
+										--><terms>2</terms><!--
+										--><term><c>When the real object is </c>already <c>tracked by debugobjects it is checked, whether the object can be </c>initialized. Initializing<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>init<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>initialization<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>316</span><span>-</span></td>
+											<td>!Elib/debugobjects.c</td>
+										</tr>
+										<tr>
+											<td><span>317</span><span>-</span></td>
+											<td>debug_object_init</td>
+										</tr>
+										<tr>
+											<td><span>318</span><span>-</span></td>
+											<td>This function is called whenever the initialization function of a real object is called.</td>
+										</tr>
+										<tr>
+											<td><span>319</span><span>:</span></td>
+											<td><h><c>When the real object is </c>already <c>tracked by debugobjects it is checked, whether the object can be </c>initialized. Initializing<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>init<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>initialization<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>320</span><span>-</span></td>
+											<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+										</tr>
+										<tr>
+											<td><span>321</span><span>-</span></td>
+											<td>debug_object_init_on_stack</td>
+										</tr>
+										<tr>
+											<td><span>322</span><span>-</span></td>
+											<td>This function is called whenever the initialization function of a real object which resides on the stack is called.</td>
+										</tr>
+										<tr>
+											<td><span>323</span><span>:</span></td>
+											<td><h><c>When the real object is </c>already <c>tracked by debugobjects it is checked, whether the object can be </c>initialized. Initializing<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>init<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>initialization<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>324</span><span>-</span></td>
+											<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+										</tr>
+										<tr>
+											<td><span>325</span><span>-</span></td>
+											<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+										</tr>
+										<tr>
+											<td><span>326</span><span>-</span></td>
+											<td>debug_object_activate</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+				
+								<li><details>
+									<summary><!--
+										--><terms>1</terms><!--
+										--><term><c>When the real object is </c>already <c>tracked by debugobjects it is checked, whether the object can be </c>activated. Activating<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>activate<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>activation<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>325</span><span>-</span></td>
+											<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+										</tr>
+										<tr>
+											<td><span>326</span><span>-</span></td>
+											<td>debug_object_activate</td>
+										</tr>
+										<tr>
+											<td><span>327</span><span>-</span></td>
+											<td>This function is called whenever the activation function of a real object is called.</td>
+										</tr>
+										<tr>
+											<td><span>328</span><span>:</span></td>
+											<td><h><c>When the real object is </c>already <c>tracked by debugobjects it is checked, whether the object can be </c>activated. Activating<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>activate<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>activation<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>329</span><span>-</span></td>
+											<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+										</tr>
+										<tr>
+											<td><span>330</span><span>-</span></td>
+											<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+										</tr>
+										<tr>
+											<td><span>331</span><span>-</span></td>
+											<td>debug_object_deactivate</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+				
+								<li><details>
+									<summary><!--
+										--><terms>1</terms><!--
+										--><term><c>When the real object is </c><c>tracked by debugobjects it is checked, whether the object can be </c>destroyed. Destruction<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>destroy<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>destruction<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>334</span><span>-</span></td>
+											<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+										</tr>
+										<tr>
+											<td><span>335</span><span>-</span></td>
+											<td>debug_object_destroy</td>
+										</tr>
+										<tr>
+											<td><span>336</span><span>-</span></td>
+											<td>This function is called to mark an object destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.</td>
+										</tr>
+										<tr>
+											<td><span>337</span><span>:</span></td>
+											<td><h><c>When the real object is </c><c>tracked by debugobjects it is checked, whether the object can be </c>destroyed. Destruction<c> is not allowed for </c>active and destroyed<c> objects. When debugobjects detects an error, then it calls the fixup_</c>destroy<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>destruction<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>338</span><span>-</span></td>
+											<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+										</tr>
+										<tr>
+											<td><span>339</span><span>-</span></td>
+											<td>debug_object_free</td>
+										</tr>
+										<tr>
+											<td><span>340</span><span>-</span></td>
+											<td>This function is called before an object is freed.</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+				
+								<li><details>
+									<summary><!--
+										--><terms>1</terms><!--
+										--><term><c>When the real object is </c><c>tracked by debugobjects it is checked, whether the object can be </c>freed. Free<c> is not allowed for </c>active<c> objects. When debugobjects detects an error, then it calls the fixup_</c>free<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>free<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>338</span><span>-</span></td>
+											<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+										</tr>
+										<tr>
+											<td><span>339</span><span>-</span></td>
+											<td>debug_object_free</td>
+										</tr>
+										<tr>
+											<td><span>340</span><span>-</span></td>
+											<td>This function is called before an object is freed.</td>
+										</tr>
+										<tr>
+											<td><span>341</span><span>:</span></td>
+											<td><h><c>When the real object is </c><c>tracked by debugobjects it is checked, whether the object can be </c>freed. Free<c> is not allowed for </c>active<c> objects. When debugobjects detects an error, then it calls the fixup_</c>free<c> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real </c>free<c> of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</c></h></td>
+										</tr>
+										<tr>
+											<td><span>342</span><span>-</span></td>
+											<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+										</tr>
+										<tr>
+											<td><span>343</span><span>-</span></td>
+											<td>debug_object_assert_init</td>
+										</tr>
+										<tr>
+											<td><span>344</span><span>-</span></td>
+											<td>This function is called to assert that an object has been initialized.</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+							</ol></details></li>
+						</ol>
+					</details></li>
+					<li><details>
+						<summary><!--
+							--><matches>2</matches><!--
+							--><regex>When the real object is not <m>(yet |)</m>tracked by debugobjects<m>*</m> fixup_</regex>
+						</summary>
+						<ol>
+							<li><details><summary><span>terms</span></summary><ol class="terms">
+								<li><details>
+									<summary><!--
+										--><terms>1</terms><!--
+										--><term><c>When the real object is not </c><c>tracked by debugobjects</c>, it calls<c> fixup_</c>assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>342</span><span>-</span></td>
+											<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+										</tr>
+										<tr>
+											<td><span>343</span><span>-</span></td>
+											<td>debug_object_assert_init</td>
+										</tr>
+										<tr>
+											<td><span>344</span><span>-</span></td>
+											<td>This function is called to assert that an object has been initialized.</td>
+										</tr>
+										<tr>
+											<td><span>345</span><span>:</span></td>
+											<td><h><c>When the real object is not </c><c>tracked by debugobjects</c>, it calls<c> fixup_</c>assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</h> The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+										</tr>
+										<tr>
+											<td><span>346</span><span>-</span></td>
+											<td>When the real object is already tracked by debugobjects it is ignored.</td>
+										</tr>
+										<tr>
+											<td><span>347</span><span>-</span></td>
+											<td>Fixup functions</td>
+										</tr>
+										<tr>
+											<td><span>348</span><span>-</span></td>
+											<td>Debug object type description structure</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+				
+								<li><details>
+									<summary><!--
+										--><terms>1</terms><!--
+										--><term><c>When the real object is not </c>yet <c>tracked by debugobjects</c> then the<c> fixup_</c>activate function is called if available.</term>
+									</summary>
+									<table><tbody>
+										<tr>
+											<td><span>326</span><span>-</span></td>
+											<td>debug_object_activate</td>
+										</tr>
+										<tr>
+											<td><span>327</span><span>-</span></td>
+											<td>This function is called whenever the activation function of a real object is called.</td>
+										</tr>
+										<tr>
+											<td><span>328</span><span>-</span></td>
+											<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+										</tr>
+										<tr>
+											<td><span>329</span><span>:</span></td>
+											<td><h><c>When the real object is not </c>yet <c>tracked by debugobjects</c> then the<c> fixup_</c>activate function is called if available.</h> This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+										</tr>
+										<tr>
+											<td><span>330</span><span>-</span></td>
+											<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+										</tr>
+										<tr>
+											<td><span>331</span><span>-</span></td>
+											<td>debug_object_deactivate</td>
+										</tr>
+										<tr>
+											<td><span>332</span><span>-</span></td>
+											<td>This function is called whenever the deactivation function of a real object is called.</td>
+										</tr>
+									</tbody></table>
+								</details></li>
+							</ol></details></li>
+						</ol>
+					</details></li>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>2</terms><!--
+								--><term>When the real object is already tracked by <c>debugobjects</c> it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>init function of<c> the object type description structure </c>if <c>provided by the caller</c>.</term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>316</span><span>-</span></td>
+									<td>!Elib/debugobjects.c</td>
+								</tr>
+								<tr>
+									<td><span>317</span><span>-</span></td>
+									<td>debug_object_init</td>
+								</tr>
+								<tr>
+									<td><span>318</span><span>-</span></td>
+									<td>This function is called whenever the initialization function of a real object is called.</td>
+								</tr>
+								<tr>
+									<td><span>319</span><span>:</span></td>
+									<td><h>When the real object is already tracked by <c>debugobjects</c> it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>init function of<c> the object type description structure </c>if <c>provided by the caller</c>.</h> The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+								</tr>
+								<tr>
+									<td><span>320</span><span>-</span></td>
+									<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+								</tr>
+								<tr>
+									<td><span>321</span><span>-</span></td>
+									<td>debug_object_init_on_stack</td>
+								</tr>
+								<tr>
+									<td><span>322</span><span>-</span></td>
+									<td>This function is called whenever the initialization function of a real object which resides on the stack is called.</td>
+								</tr>
+								<tr>
+									<td><span>323</span><span>:</span></td>
+									<td><h>When the real object is already tracked by <c>debugobjects</c> it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>init function of<c> the object type description structure </c>if <c>provided by the caller</c>.</h> The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+								</tr>
+								<tr>
+									<td><span>324</span><span>-</span></td>
+									<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+								</tr>
+								<tr>
+									<td><span>325</span><span>-</span></td>
+									<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+								</tr>
+								<tr>
+									<td><span>326</span><span>-</span></td>
+									<td>debug_object_activate</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term>When the real object is already tracked by <c>debugobjects</c> it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>activate function of<c> the object type description structure </c>if <c>provided by the caller</c>.</term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>325</span><span>-</span></td>
+									<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+								</tr>
+								<tr>
+									<td><span>326</span><span>-</span></td>
+									<td>debug_object_activate</td>
+								</tr>
+								<tr>
+									<td><span>327</span><span>-</span></td>
+									<td>This function is called whenever the activation function of a real object is called.</td>
+								</tr>
+								<tr>
+									<td><span>328</span><span>:</span></td>
+									<td><h>When the real object is already tracked by <c>debugobjects</c> it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>activate function of<c> the object type description structure </c>if <c>provided by the caller</c>.</h> The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+								</tr>
+								<tr>
+									<td><span>329</span><span>-</span></td>
+									<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+								</tr>
+								<tr>
+									<td><span>330</span><span>-</span></td>
+									<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+								</tr>
+								<tr>
+									<td><span>331</span><span>-</span></td>
+									<td>debug_object_deactivate</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term>When the real object is not tracked by <c>debugobjects</c>,<c> it calls </c><c>fixup_</c>assert_init of<c> the object type description structure </c><c>provided by the caller</c>, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>342</span><span>-</span></td>
+									<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+								</tr>
+								<tr>
+									<td><span>343</span><span>-</span></td>
+									<td>debug_object_assert_init</td>
+								</tr>
+								<tr>
+									<td><span>344</span><span>-</span></td>
+									<td>This function is called to assert that an object has been initialized.</td>
+								</tr>
+								<tr>
+									<td><span>345</span><span>:</span></td>
+									<td><h>When the real object is not tracked by <c>debugobjects</c>,<c> it calls </c><c>fixup_</c>assert_init of<c> the object type description structure </c><c>provided by the caller</c>, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</h> The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+								</tr>
+								<tr>
+									<td><span>346</span><span>-</span></td>
+									<td>When the real object is already tracked by debugobjects it is ignored.</td>
+								</tr>
+								<tr>
+									<td><span>347</span><span>-</span></td>
+									<td>Fixup functions</td>
+								</tr>
+								<tr>
+									<td><span>348</span><span>-</span></td>
+									<td>Debug object type description structure</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term>When the real object is tracked by <c>debugobjects</c> it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>destroy function of<c> the object type description structure </c>if <c>provided by the caller</c>.</term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>334</span><span>-</span></td>
+									<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+								</tr>
+								<tr>
+									<td><span>335</span><span>-</span></td>
+									<td>debug_object_destroy</td>
+								</tr>
+								<tr>
+									<td><span>336</span><span>-</span></td>
+									<td>This function is called to mark an object destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.</td>
+								</tr>
+								<tr>
+									<td><span>337</span><span>:</span></td>
+									<td><h>When the real object is tracked by <c>debugobjects</c> it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>destroy function of<c> the object type description structure </c>if <c>provided by the caller</c>.</h> The fixup function can correct the problem before the real destruction of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+								</tr>
+								<tr>
+									<td><span>338</span><span>-</span></td>
+									<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+								</tr>
+								<tr>
+									<td><span>339</span><span>-</span></td>
+									<td>debug_object_free</td>
+								</tr>
+								<tr>
+									<td><span>340</span><span>-</span></td>
+									<td>This function is called before an object is freed.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term>When the real object is tracked by <c>debugobjects</c> it is checked, whether the object can be freed. Free is not allowed for active objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>free function of<c> the object type description structure </c>if <c>provided by the caller</c>.</term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>338</span><span>-</span></td>
+									<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+								</tr>
+								<tr>
+									<td><span>339</span><span>-</span></td>
+									<td>debug_object_free</td>
+								</tr>
+								<tr>
+									<td><span>340</span><span>-</span></td>
+									<td>This function is called before an object is freed.</td>
+								</tr>
+								<tr>
+									<td><span>341</span><span>:</span></td>
+									<td><h>When the real object is tracked by <c>debugobjects</c> it is checked, whether the object can be freed. Free is not allowed for active objects. When debugobjects detects an error, then<c> it calls </c>the <c>fixup_</c>free function of<c> the object type description structure </c>if <c>provided by the caller</c>.</h> The fixup function can correct the problem before the real free of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+								</tr>
+								<tr>
+									<td><span>342</span><span>-</span></td>
+									<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+								</tr>
+								<tr>
+									<td><span>343</span><span>-</span></td>
+									<td>debug_object_assert_init</td>
+								</tr>
+								<tr>
+									<td><span>344</span><span>-</span></td>
+									<td>This function is called to assert that an object has been initialized.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>5</matches><!--
+					--><regex>The function returns 1 when the <c>fixup</c> was successful, otherwise 0. The return value is used to update the statistics.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>5</terms><!--
+								--><term><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>351</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_init is detected. The function takes the address of the object and the state which is currently recorded in the tracker.</td>
+								</tr>
+								<tr>
+									<td><span>352</span><span>-</span></td>
+									<td>Called from debug_object_init when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>353</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>354</span><span>:</span></td>
+									<td><h><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>355</span><span>-</span></td>
+									<td>Note, that the function needs to call the debug_object_init() function again, after the damage has been repaired in order to keep the state consistent.</td>
+								</tr>
+								<tr>
+									<td><span>356</span><span>-</span></td>
+									<td>fixup_activate</td>
+								</tr>
+								<tr>
+									<td><span>357</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_activate is detected.</td>
+								</tr>
+								<tr>
+									<td><span>358</span><span>-</span></td>
+									<td>Called from debug_object_activate when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>359</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_NOTAVAILABLE</td>
+								</tr>
+								<tr>
+									<td><span>360</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>361</span><span>:</span></td>
+									<td><h><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>362</span><span>-</span></td>
+									<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+								</tr>
+								<tr>
+									<td><span>363</span><span>-</span></td>
+									<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+								</tr>
+								<tr>
+									<td><span>364</span><span>-</span></td>
+									<td>fixup_destroy</td>
+								</tr>
+								<tr>
+									<td><span>365</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+								</tr>
+								<tr>
+									<td><span>366</span><span>-</span></td>
+									<td>Called from debug_object_destroy when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>367</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>368</span><span>:</span></td>
+									<td><h><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>369</span><span>-</span></td>
+									<td>fixup_free</td>
+								</tr>
+								<tr>
+									<td><span>370</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_free is detected. Further it can be called from the debug checks in kfree/vfree, when an active object is detected from the debug_check_no_obj_freed() sanity checks.</td>
+								</tr>
+								<tr>
+									<td><span>371</span><span>-</span></td>
+									<td>Called from debug_object_free() or debug_check_no_obj_freed() when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>372</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>373</span><span>:</span></td>
+									<td><h><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>374</span><span>-</span></td>
+									<td>fixup_assert_init</td>
+								</tr>
+								<tr>
+									<td><span>375</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_assert_init is detected.</td>
+								</tr>
+								<tr>
+									<td><span>376</span><span>-</span></td>
+									<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+								</tr>
+								<tr>
+									<td><span>377</span><span>:</span></td>
+									<td><h><c>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>378</span><span>-</span></td>
+									<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+								</tr>
+								<tr>
+									<td><span>379</span><span>-</span></td>
+									<td>The handling of statically initialized objects is a special case. The fixup function should check if this is a legitimate case of a statically initialized object or not. In this case only debug_object_init() should be called to make the object known to the tracker. Then the function should return 0 because this is not a real fixup.</td>
+								</tr>
+								<tr>
+									<td><span>380</span><span>-</span></td>
+									<td>Known Bugs And Assumptions</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>5</matches><!--
+					--><regex>This function is called from the debug code whenever a problem in <m>*</m> is detected.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>This function is called from the debug code whenever a problem in </c>debug_object_activate<c> is detected.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>354</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>355</span><span>-</span></td>
+									<td>Note, that the function needs to call the debug_object_init() function again, after the damage has been repaired in order to keep the state consistent.</td>
+								</tr>
+								<tr>
+									<td><span>356</span><span>-</span></td>
+									<td>fixup_activate</td>
+								</tr>
+								<tr>
+									<td><span>357</span><span>:</span></td>
+									<td><h><c>This function is called from the debug code whenever a problem in </c>debug_object_activate<c> is detected.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>358</span><span>-</span></td>
+									<td>Called from debug_object_activate when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>359</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_NOTAVAILABLE</td>
+								</tr>
+								<tr>
+									<td><span>360</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>This function is called from the debug code whenever a problem in </c>debug_object_assert_init<c> is detected.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>372</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>373</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>374</span><span>-</span></td>
+									<td>fixup_assert_init</td>
+								</tr>
+								<tr>
+									<td><span>375</span><span>:</span></td>
+									<td><h><c>This function is called from the debug code whenever a problem in </c>debug_object_assert_init<c> is detected.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>376</span><span>-</span></td>
+									<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+								</tr>
+								<tr>
+									<td><span>377</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>378</span><span>-</span></td>
+									<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>This function is called from the debug code whenever a problem in </c>debug_object_destroy<c> is detected.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>362</span><span>-</span></td>
+									<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+								</tr>
+								<tr>
+									<td><span>363</span><span>-</span></td>
+									<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+								</tr>
+								<tr>
+									<td><span>364</span><span>-</span></td>
+									<td>fixup_destroy</td>
+								</tr>
+								<tr>
+									<td><span>365</span><span>:</span></td>
+									<td><h><c>This function is called from the debug code whenever a problem in </c>debug_object_destroy<c> is detected.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>366</span><span>-</span></td>
+									<td>Called from debug_object_destroy when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>367</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>368</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>This function is called from the debug code whenever a problem in </c>debug_object_free<c> is detected.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>367</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>368</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>369</span><span>-</span></td>
+									<td>fixup_free</td>
+								</tr>
+								<tr>
+									<td><span>370</span><span>:</span></td>
+									<td><h><c>This function is called from the debug code whenever a problem in </c>debug_object_free<c> is detected.</c></h> Further it can be called from the debug checks in kfree/vfree, when an active object is detected from the debug_check_no_obj_freed() sanity checks.</td>
+								</tr>
+								<tr>
+									<td><span>371</span><span>-</span></td>
+									<td>Called from debug_object_free() or debug_check_no_obj_freed() when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>372</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>373</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>This function is called from the debug code whenever a problem in </c>debug_object_init<c> is detected.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>348</span><span>-</span></td>
+									<td>Debug object type description structure</td>
+								</tr>
+								<tr>
+									<td><span>349</span><span>-</span></td>
+									<td>!Iinclude/linux/debugobjects.h</td>
+								</tr>
+								<tr>
+									<td><span>350</span><span>-</span></td>
+									<td>fixup_init</td>
+								</tr>
+								<tr>
+									<td><span>351</span><span>:</span></td>
+									<td><h><c>This function is called from the debug code whenever a problem in </c>debug_object_init<c> is detected.</c></h> The function takes the address of the object and the state which is currently recorded in the tracker.</td>
+								</tr>
+								<tr>
+									<td><span>352</span><span>-</span></td>
+									<td>Called from debug_object_init when the object state is:</td>
+								</tr>
+								<tr>
+									<td><span>353</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>354</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>2</matches><!--
+					--><regex>The <c>fixup</c> function <m>*</m> check <m>*</m> this is a legitimate case of a statically initialized object or not. <m>*</m> to make the object known to the tracker<m>*</m> the function should return 0 because this is not a real <c>fixup</c>.</regex>
+				</summary>
+				<ol>
+					<li><details><summary><span>terms</span></summary><ol class="terms">
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>The fixup function </c>needs to<c> check </c>whether<c> this is a legitimate case of a statically initialized object or not. </c>In case it is it calls debug_object_init() and debug_object_activate()<c> to make the object known to the tracker</c> and marked active. In this case<c> the function should return 0 because this is not a real fixup.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>360</span><span>-</span></td>
+									<td>•    ODEBUG_STATE_ACTIVE</td>
+								</tr>
+								<tr>
+									<td><span>361</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>362</span><span>-</span></td>
+									<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+								</tr>
+								<tr>
+									<td><span>363</span><span>:</span></td>
+									<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. <h><c>The fixup function </c>needs to<c> check </c>whether<c> this is a legitimate case of a statically initialized object or not. </c>In case it is it calls debug_object_init() and debug_object_activate()<c> to make the object known to the tracker</c> and marked active. In this case<c> the function should return 0 because this is not a real fixup.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>364</span><span>-</span></td>
+									<td>fixup_destroy</td>
+								</tr>
+								<tr>
+									<td><span>365</span><span>-</span></td>
+									<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+								</tr>
+								<tr>
+									<td><span>366</span><span>-</span></td>
+									<td>Called from debug_object_destroy when the object state is:</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+		
+						<li><details>
+							<summary><!--
+								--><terms>1</terms><!--
+								--><term><c>The fixup function </c>should<c> check </c>if<c> this is a legitimate case of a statically initialized object or not. </c>In this case only debug_object_init() should be called<c> to make the object known to the tracker</c>. Then<c> the function should return 0 because this is not a real fixup.</c></term>
+							</summary>
+							<table><tbody>
+								<tr>
+									<td><span>376</span><span>-</span></td>
+									<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+								</tr>
+								<tr>
+									<td><span>377</span><span>-</span></td>
+									<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+								</tr>
+								<tr>
+									<td><span>378</span><span>-</span></td>
+									<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+								</tr>
+								<tr>
+									<td><span>379</span><span>:</span></td>
+									<td>The handling of statically initialized objects is a special case. <h><c>The fixup function </c>should<c> check </c>if<c> this is a legitimate case of a statically initialized object or not. </c>In this case only debug_object_init() should be called<c> to make the object known to the tracker</c>. Then<c> the function should return 0 because this is not a real fixup.</c></h></td>
+								</tr>
+								<tr>
+									<td><span>380</span><span>-</span></td>
+									<td>Known Bugs And Assumptions</td>
+								</tr>
+								<tr>
+									<td><span>381</span><span>-</span></td>
+									<td>None (knock on wood).</td>
+								</tr>
+								<tr>
+									<td><span>382</span><span>-</span></td>
+									<td>Driver Basics</td>
+								</tr>
+							</tbody></table>
+						</details></li>
+					</ol></details></li>
+				</ol>
+			</details></li>
+			<li><details><summary><span>terms</span></summary><ol class="terms">
+				<li><details>
+					<summary><!--
+						--><terms>5</terms><!--
+						--><term>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>351</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_init is detected. The function takes the address of the object and the state which is currently recorded in the tracker.</td>
+						</tr>
+						<tr>
+							<td><span>352</span><span>-</span></td>
+							<td>Called from debug_object_init when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>353</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>354</span><span>:</span></td>
+							<td><h>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</h> The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>355</span><span>-</span></td>
+							<td>Note, that the function needs to call the debug_object_init() function again, after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>356</span><span>-</span></td>
+							<td>fixup_activate</td>
+						</tr>
+						<tr>
+							<td><span>357</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_activate is detected.</td>
+						</tr>
+						<tr>
+							<td><span>358</span><span>-</span></td>
+							<td>Called from debug_object_activate when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>359</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_NOTAVAILABLE</td>
+						</tr>
+						<tr>
+							<td><span>360</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>361</span><span>:</span></td>
+							<td><h>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</h> The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>-</span></td>
+							<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>-</span></td>
+							<td>fixup_destroy</td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>367</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>368</span><span>:</span></td>
+							<td><h>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</h> The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>369</span><span>-</span></td>
+							<td>fixup_free</td>
+						</tr>
+						<tr>
+							<td><span>370</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_free is detected. Further it can be called from the debug checks in kfree/vfree, when an active object is detected from the debug_check_no_obj_freed() sanity checks.</td>
+						</tr>
+						<tr>
+							<td><span>371</span><span>-</span></td>
+							<td>Called from debug_object_free() or debug_check_no_obj_freed() when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>372</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>373</span><span>:</span></td>
+							<td><h>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</h> The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>374</span><span>-</span></td>
+							<td>fixup_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>375</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_assert_init is detected.</td>
+						</tr>
+						<tr>
+							<td><span>376</span><span>-</span></td>
+							<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+						</tr>
+						<tr>
+							<td><span>377</span><span>:</span></td>
+							<td><h>The function returns 1 when the <c>fixup</c> was successful, otherwise 0.</h> The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>378</span><span>-</span></td>
+							<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+						</tr>
+						<tr>
+							<td><span>379</span><span>-</span></td>
+							<td>The handling of statically initialized objects is a special case. The fixup function should check if this is a legitimate case of a statically initialized object or not. In this case only debug_object_init() should be called to make the object known to the tracker. Then the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>380</span><span>-</span></td>
+							<td>Known Bugs And Assumptions</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>2</terms><!--
+						--><term>The <c>fixup</c> function can correct the problem before the real initialization of the object happens.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>316</span><span>-</span></td>
+							<td>!Elib/debugobjects.c</td>
+						</tr>
+						<tr>
+							<td><span>317</span><span>-</span></td>
+							<td>debug_object_init</td>
+						</tr>
+						<tr>
+							<td><span>318</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>319</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller. <h>The <c>fixup</c> function can correct the problem before the real initialization of the object happens.</h> E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>320</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+						</tr>
+						<tr>
+							<td><span>321</span><span>-</span></td>
+							<td>debug_object_init_on_stack</td>
+						</tr>
+						<tr>
+							<td><span>322</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object which resides on the stack is called.</td>
+						</tr>
+						<tr>
+							<td><span>323</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_init function of the object type description structure if provided by the caller. <h>The <c>fixup</c> function can correct the problem before the real initialization of the object happens.</h> E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>324</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+						</tr>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>2</terms><!--
+						--><term>When debugobjects detects an error, then it calls the <c>fixup</c>_init function of the object type description structure if provided by the caller.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>316</span><span>-</span></td>
+							<td>!Elib/debugobjects.c</td>
+						</tr>
+						<tr>
+							<td><span>317</span><span>-</span></td>
+							<td>debug_object_init</td>
+						</tr>
+						<tr>
+							<td><span>318</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>319</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. <h>When debugobjects detects an error, then it calls the <c>fixup</c>_init function of the object type description structure if provided by the caller.</h> The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>320</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+						</tr>
+						<tr>
+							<td><span>321</span><span>-</span></td>
+							<td>debug_object_init_on_stack</td>
+						</tr>
+						<tr>
+							<td><span>322</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object which resides on the stack is called.</td>
+						</tr>
+						<tr>
+							<td><span>323</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. <h>When debugobjects detects an error, then it calls the <c>fixup</c>_init function of the object type description structure if provided by the caller.</h> The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>324</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+						</tr>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>After locating the appropriate encoders, the helper function will call the mode_<c>fixup</c> encoder and CRTC helper operations to adjust the requested mode, or reject it completely in which case an error will be returned to the application.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>910</span><span>-</span></td>
+							<td>Helper Functions</td>
+						</tr>
+						<tr>
+							<td><span>911</span><span>-</span></td>
+							<td>•    int drm_crtc_helper_set_config(struct drm_mode_set *set);</td>
+						</tr>
+						<tr>
+							<td><span>912</span><span>-</span></td>
+							<td>     The drm_crtc_helper_set_config helper function is a CRTC set_config implementation. It first tries to locate the best encoder for each connector by calling the connector best_encoder helper operation.</td>
+						</tr>
+						<tr>
+							<td><span>913</span><span>:</span></td>
+							<td>     <h>After locating the appropriate encoders, the helper function will call the mode_<c>fixup</c> encoder and CRTC helper operations to adjust the requested mode, or reject it completely in which case an error will be returned to the application.</h> If the new configuration after mode adjustment is identical to the current configuration the helper function will return without performing any other operation.</td>
+						</tr>
+						<tr>
+							<td><span>914</span><span>-</span></td>
+							<td>     If the adjusted mode is identical to the current mode but changes to the frame buffer need to be applied, the drm_crtc_helper_set_config function will call the CRTC mode_set_base helper operation. If the adjusted mode differs from the current mode, or if the mode_set_base helper operation is not provided, the helper function performs a full mode set sequence by calling the prepare, mode_set and commit CRTC and encoder helper operations, in that order.</td>
+						</tr>
+						<tr>
+							<td><span>915</span><span>-</span></td>
+							<td>•    void drm_helper_connector_dpms(struct drm_connector *connector, int mode);</td>
+						</tr>
+						<tr>
+							<td><span>916</span><span>-</span></td>
+							<td>     The drm_helper_connector_dpms helper function is a connector dpms implementation that tracks power state of connectors. To use the function, drivers must provide dpms helper operations for CRTCs and encoders to apply the DPMS state to the device.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>bool (*mode_<c>fixup</c>)(struct drm_crtc *crtc, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>919</span><span>-</span></td>
+							<td>     The drm_helper_probe_single_connector_modes helper function is a connector fill_modes implementation that updates the connection status for the connector and then retrieves a list of modes by calling the connector get_modes helper operation.</td>
+						</tr>
+						<tr>
+							<td><span>920</span><span>-</span></td>
+							<td>     The function filters out modes larger than max_width and max_height if specified. It then calls the connector mode_valid helper operation for each mode in the probed list to check whether the mode is valid for the connector.</td>
+						</tr>
+						<tr>
+							<td><span>921</span><span>-</span></td>
+							<td>CRTC Helper Operations</td>
+						</tr>
+						<tr>
+							<td><span>922</span><span>:</span></td>
+							<td>•    <h>bool (*mode_<c>fixup</c>)(struct drm_crtc *crtc, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</h></td>
+						</tr>
+						<tr>
+							<td><span>923</span><span>-</span></td>
+							<td>     Let CRTCs adjust the requested mode or reject it completely. This operation returns true if the mode is accepted (possibly after being adjusted) or false if it is rejected.</td>
+						</tr>
+						<tr>
+							<td><span>924</span><span>-</span></td>
+							<td>     The mode_fixup operation should reject the mode if it can't reasonably use it. The definition of "reasonable" is currently fuzzy in this context. One possible behaviour would be to set the adjusted mode to the panel timings when a fixed-mode panel is used with hardware capable of scaling. Another behaviour would be to accept any input mode and adjust it to the closest mode supported by the hardware (FIXME: This needs to be clarified).</td>
+						</tr>
+						<tr>
+							<td><span>925</span><span>-</span></td>
+							<td>•    int (*mode_set_base)(struct drm_crtc *crtc, int x, int y, struct drm_framebuffer *old_fb)</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>bool (*mode_<c>fixup</c>)(struct drm_encoder *encoder, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>935</span><span>-</span></td>
+							<td>•    void (*commit)(struct drm_crtc *crtc);</td>
+						</tr>
+						<tr>
+							<td><span>936</span><span>-</span></td>
+							<td>     Commit a mode. This operation is called after setting the new mode. Upon return the device must use the new mode and be fully operational.</td>
+						</tr>
+						<tr>
+							<td><span>937</span><span>-</span></td>
+							<td>Encoder Helper Operations</td>
+						</tr>
+						<tr>
+							<td><span>938</span><span>:</span></td>
+							<td>•    <h>bool (*mode_<c>fixup</c>)(struct drm_encoder *encoder, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</h></td>
+						</tr>
+						<tr>
+							<td><span>939</span><span>-</span></td>
+							<td>     Let encoders adjust the requested mode or reject it completely. This operation returns true if the mode is accepted (possibly after being adjusted) or false if it is rejected. See the mode_fixup CRTC helper operation for an explanation of the allowed adjustments.</td>
+						</tr>
+						<tr>
+							<td><span>940</span><span>-</span></td>
+							<td>•    void (*prepare)(struct drm_encoder *encoder);</td>
+						</tr>
+						<tr>
+							<td><span>941</span><span>-</span></td>
+							<td>     Prepare the encoder for mode setting. This operation is called after validating the requested mode. Drivers use it to perform device-specific operations required before setting the new mode.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c> functions</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+						<tr>
+							<td><span>345</span><span>-</span></td>
+							<td>When the real object is not tracked by debugobjects, it calls fixup_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE. The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+						</tr>
+						<tr>
+							<td><span>346</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is ignored.</td>
+						</tr>
+						<tr>
+							<td><span>347</span><span>:</span></td>
+							<td><h><c>fixup</c> functions</h></td>
+						</tr>
+						<tr>
+							<td><span>348</span><span>-</span></td>
+							<td>Debug object type description structure</td>
+						</tr>
+						<tr>
+							<td><span>349</span><span>-</span></td>
+							<td>!Iinclude/linux/debugobjects.h</td>
+						</tr>
+						<tr>
+							<td><span>350</span><span>-</span></td>
+							<td>fixup_init</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c>_activate</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr>
+							<td><span>327</span><span>-</span></td>
+							<td>This function is called whenever the activation function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>328</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the <h><c>fixup</c>_activate</h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>329</span><span>:</span></td>
+							<td>When the real object is not yet tracked by debugobjects then the <h><c>fixup</c>_activate</h> function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+						</tr>
+						<tr>
+							<td><span>330</span><span>-</span></td>
+							<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>331</span><span>-</span></td>
+							<td>debug_object_deactivate</td>
+						</tr>
+						<tr>
+							<td><span>332</span><span>-</span></td>
+							<td>This function is called whenever the deactivation function of a real object is called.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>353</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>354</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>355</span><span>-</span></td>
+							<td>Note, that the function needs to call the debug_object_init() function again, after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>356</span><span>:</span></td>
+							<td><h><c>fixup</c>_activate</h></td>
+						</tr>
+						<tr>
+							<td><span>357</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_activate is detected.</td>
+						</tr>
+						<tr>
+							<td><span>358</span><span>-</span></td>
+							<td>Called from debug_object_activate when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>359</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_NOTAVAILABLE</td>
+						</tr>
+						<tr>
+							<td><span>360</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>361</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>:</span></td>
+							<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then <h><c>fixup</c>_activate</h>() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>-</span></td>
+							<td>fixup_destroy</td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c>_assert_init</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+						<tr>
+							<td><span>345</span><span>:</span></td>
+							<td>When the real object is not tracked by debugobjects, it calls <h><c>fixup</c>_assert_init</h> of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE. The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+						</tr>
+						<tr>
+							<td><span>346</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is ignored.</td>
+						</tr>
+						<tr>
+							<td><span>347</span><span>-</span></td>
+							<td>Fixup functions</td>
+						</tr>
+						<tr>
+							<td><span>348</span><span>-</span></td>
+							<td>Debug object type description structure</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>371</span><span>-</span></td>
+							<td>Called from debug_object_free() or debug_check_no_obj_freed() when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>372</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>373</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>374</span><span>:</span></td>
+							<td><h><c>fixup</c>_assert_init</h></td>
+						</tr>
+						<tr>
+							<td><span>375</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_assert_init is detected.</td>
+						</tr>
+						<tr>
+							<td><span>376</span><span>-</span></td>
+							<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+						</tr>
+						<tr>
+							<td><span>377</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c>_destroy</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>334</span><span>-</span></td>
+							<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>335</span><span>-</span></td>
+							<td>debug_object_destroy</td>
+						</tr>
+						<tr>
+							<td><span>336</span><span>-</span></td>
+							<td>This function is called to mark an object destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.</td>
+						</tr>
+						<tr>
+							<td><span>337</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the <h><c>fixup</c>_destroy</h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real destruction of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>361</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>-</span></td>
+							<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>:</span></td>
+							<td><h><c>fixup</c>_destroy</h></td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>367</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c>_free</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+						<tr>
+							<td><span>341</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be freed. Free is not allowed for active objects. When debugobjects detects an error, then it calls the <h><c>fixup</c>_free</h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real free of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>367</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>368</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>369</span><span>:</span></td>
+							<td><h><c>fixup</c>_free</h></td>
+						</tr>
+						<tr>
+							<td><span>370</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_free is detected. Further it can be called from the debug checks in kfree/vfree, when an active object is detected from the debug_check_no_obj_freed() sanity checks.</td>
+						</tr>
+						<tr>
+							<td><span>371</span><span>-</span></td>
+							<td>Called from debug_object_free() or debug_check_no_obj_freed() when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>372</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term><c>fixup</c>_init</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>316</span><span>-</span></td>
+							<td>!Elib/debugobjects.c</td>
+						</tr>
+						<tr>
+							<td><span>317</span><span>-</span></td>
+							<td>debug_object_init</td>
+						</tr>
+						<tr>
+							<td><span>318</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>319</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the <h><c>fixup</c>_init</h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>320</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects, debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is not on the callers stack. If it is on the callers stack then a limited number of warnings including a full stack trace is printk'ed. The calling code must use debug_object_init_on_stack() and remove the object before leaving the function which allocated it. See next section.</td>
+						</tr>
+						<tr>
+							<td><span>321</span><span>-</span></td>
+							<td>debug_object_init_on_stack</td>
+						</tr>
+						<tr>
+							<td><span>322</span><span>-</span></td>
+							<td>This function is called whenever the initialization function of a real object which resides on the stack is called.</td>
+						</tr>
+						<tr>
+							<td><span>323</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be initialized. Initializing is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the <h><c>fixup</c>_init</h> function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real initialization of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>324</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects debugobjects allocates a tracker object for the real object and sets the tracker object state to ODEBUG_STATE_INIT. It verifies that the object is on the callers stack.</td>
+						</tr>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr class="padding"></tr>
+						<tr class="hr"><td></td><td></td></tr>
+						<tr class="padding"></tr>
+						<tr>
+							<td><span>347</span><span>-</span></td>
+							<td>Fixup functions</td>
+						</tr>
+						<tr>
+							<td><span>348</span><span>-</span></td>
+							<td>Debug object type description structure</td>
+						</tr>
+						<tr>
+							<td><span>349</span><span>-</span></td>
+							<td>!Iinclude/linux/debugobjects.h</td>
+						</tr>
+						<tr>
+							<td><span>350</span><span>:</span></td>
+							<td><h><c>fixup</c>_init</h></td>
+						</tr>
+						<tr>
+							<td><span>351</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_init is detected. The function takes the address of the object and the state which is currently recorded in the tracker.</td>
+						</tr>
+						<tr>
+							<td><span>352</span><span>-</span></td>
+							<td>Called from debug_object_init when the object state is:</td>
+						</tr>
+						<tr>
+							<td><span>353</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>In this case the function should return 0 because this is not a real <c>fixup</c>.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>360</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>361</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>:</span></td>
+							<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. <h>In this case the function should return 0 because this is not a real <c>fixup</c>.</h></td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>-</span></td>
+							<td>fixup_destroy</td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>Optional functions can and should be provided to <c>fixup</c> detected problems so the kernel can continue to work and the debug information can be retrieved from a live system instead of hard core debugging with serial consoles and stack trace transcripts from the monitor.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>299</span><span>-</span></td>
+							<td>•    Usage of freed/destroyed objects</td>
+						</tr>
+						<tr>
+							<td><span>300</span><span>-</span></td>
+							<td>debugobjects is not changing the data structure of the real object so it can be compiled in with a minimal runtime impact and enabled on demand with a kernel command line option.</td>
+						</tr>
+						<tr>
+							<td><span>301</span><span>-</span></td>
+							<td>Howto use debugobjects</td>
+						</tr>
+						<tr>
+							<td><span>302</span><span>:</span></td>
+							<td>A kernel subsystem needs to provide a data structure which describes the object type and add calls into the debug code at appropriate places. The data structure to describe the object type needs at minimum the name of the object type. <h>Optional functions can and should be provided to <c>fixup</c> detected problems so the kernel can continue to work and the debug information can be retrieved from a live system instead of hard core debugging with serial consoles and stack trace transcripts from the monitor.</h></td>
+						</tr>
+						<tr>
+							<td><span>303</span><span>-</span></td>
+							<td>The debug calls provided by debugobjects are:</td>
+						</tr>
+						<tr>
+							<td><span>304</span><span>-</span></td>
+							<td>•    debug_object_init</td>
+						</tr>
+						<tr>
+							<td><span>305</span><span>-</span></td>
+							<td>•    debug_object_init_on_stack</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>See the mode_<c>fixup</c> CRTC helper operation for an explanation of the allowed adjustments.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>936</span><span>-</span></td>
+							<td>     Commit a mode. This operation is called after setting the new mode. Upon return the device must use the new mode and be fully operational.</td>
+						</tr>
+						<tr>
+							<td><span>937</span><span>-</span></td>
+							<td>Encoder Helper Operations</td>
+						</tr>
+						<tr>
+							<td><span>938</span><span>-</span></td>
+							<td>•    bool (*mode_fixup)(struct drm_encoder *encoder, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</td>
+						</tr>
+						<tr>
+							<td><span>939</span><span>:</span></td>
+							<td>     Let encoders adjust the requested mode or reject it completely. This operation returns true if the mode is accepted (possibly after being adjusted) or false if it is rejected. <h>See the mode_<c>fixup</c> CRTC helper operation for an explanation of the allowed adjustments.</h></td>
+						</tr>
+						<tr>
+							<td><span>940</span><span>-</span></td>
+							<td>•    void (*prepare)(struct drm_encoder *encoder);</td>
+						</tr>
+						<tr>
+							<td><span>941</span><span>-</span></td>
+							<td>     Prepare the encoder for mode setting. This operation is called after validating the requested mode. Drivers use it to perform device-specific operations required before setting the new mode.</td>
+						</tr>
+						<tr>
+							<td><span>942</span><span>-</span></td>
+							<td>•    void (*mode_set)(struct drm_encoder *encoder, struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function can correct the problem before the real activation of the object happens.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr>
+							<td><span>327</span><span>-</span></td>
+							<td>This function is called whenever the activation function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>328</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller. <h>The <c>fixup</c> function can correct the problem before the real activation of the object happens.</h> E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>329</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+						</tr>
+						<tr>
+							<td><span>330</span><span>-</span></td>
+							<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>331</span><span>-</span></td>
+							<td>debug_object_deactivate</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function can correct the problem before the real destruction of the object happens.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>334</span><span>-</span></td>
+							<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>335</span><span>-</span></td>
+							<td>debug_object_destroy</td>
+						</tr>
+						<tr>
+							<td><span>336</span><span>-</span></td>
+							<td>This function is called to mark an object destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.</td>
+						</tr>
+						<tr>
+							<td><span>337</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_destroy function of the object type description structure if provided by the caller. <h>The <c>fixup</c> function can correct the problem before the real destruction of the object happens.</h> E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function can correct the problem before the real free of the object happens.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+						<tr>
+							<td><span>341</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be freed. Free is not allowed for active objects. When debugobjects detects an error, then it calls the fixup_free function of the object type description structure if provided by the caller. <h>The <c>fixup</c> function can correct the problem before the real free of the object happens.</h> E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function can correct the problem by calling debug_object_init and other specific initializing functions.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+						<tr>
+							<td><span>345</span><span>:</span></td>
+							<td>When the real object is not tracked by debugobjects, it calls fixup_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE. <h>The <c>fixup</c> function can correct the problem by calling debug_object_init and other specific initializing functions.</h></td>
+						</tr>
+						<tr>
+							<td><span>346</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is ignored.</td>
+						</tr>
+						<tr>
+							<td><span>347</span><span>-</span></td>
+							<td>Fixup functions</td>
+						</tr>
+						<tr>
+							<td><span>348</span><span>-</span></td>
+							<td>Debug object type description structure</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr>
+							<td><span>327</span><span>-</span></td>
+							<td>This function is called whenever the activation function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>328</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>329</span><span>:</span></td>
+							<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. <h>The <c>fixup</c> function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</h></td>
+						</tr>
+						<tr>
+							<td><span>330</span><span>-</span></td>
+							<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>331</span><span>-</span></td>
+							<td>debug_object_deactivate</td>
+						</tr>
+						<tr>
+							<td><span>332</span><span>-</span></td>
+							<td>This function is called whenever the deactivation function of a real object is called.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function needs to check whether this is a legitimate case of a statically initialized object or not.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>360</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>361</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>:</span></td>
+							<td>The activation of statically initialized objects is a special case. When debug_object_activate() has no tracked object for this object address then fixup_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE. <h>The <c>fixup</c> function needs to check whether this is a legitimate case of a statically initialized object or not.</h> In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>-</span></td>
+							<td>fixup_destroy</td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The <c>fixup</c> function should check if this is a legitimate case of a statically initialized object or not.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>376</span><span>-</span></td>
+							<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+						</tr>
+						<tr>
+							<td><span>377</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>378</span><span>-</span></td>
+							<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+						</tr>
+						<tr>
+							<td><span>379</span><span>:</span></td>
+							<td>The handling of statically initialized objects is a special case. <h>The <c>fixup</c> function should check if this is a legitimate case of a statically initialized object or not.</h> In this case only debug_object_init() should be called to make the object known to the tracker. Then the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>380</span><span>-</span></td>
+							<td>Known Bugs And Assumptions</td>
+						</tr>
+						<tr>
+							<td><span>381</span><span>-</span></td>
+							<td>None (knock on wood).</td>
+						</tr>
+						<tr>
+							<td><span>382</span><span>-</span></td>
+							<td>Driver Basics</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>The mode_<c>fixup</c> operation should reject the mode if it can't reasonably use it.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>921</span><span>-</span></td>
+							<td>CRTC Helper Operations</td>
+						</tr>
+						<tr>
+							<td><span>922</span><span>-</span></td>
+							<td>•    bool (*mode_fixup)(struct drm_crtc *crtc, const struct drm_display_mode *mode, struct drm_display_mode *adjusted_mode);</td>
+						</tr>
+						<tr>
+							<td><span>923</span><span>-</span></td>
+							<td>     Let CRTCs adjust the requested mode or reject it completely. This operation returns true if the mode is accepted (possibly after being adjusted) or false if it is rejected.</td>
+						</tr>
+						<tr>
+							<td><span>924</span><span>:</span></td>
+							<td>     <h>The mode_<c>fixup</c> operation should reject the mode if it can't reasonably use it.</h> The definition of "reasonable" is currently fuzzy in this context. One possible behaviour would be to set the adjusted mode to the panel timings when a fixed-mode panel is used with hardware capable of scaling. Another behaviour would be to accept any input mode and adjust it to the closest mode supported by the hardware (FIXME: This needs to be clarified).</td>
+						</tr>
+						<tr>
+							<td><span>925</span><span>-</span></td>
+							<td>•    int (*mode_set_base)(struct drm_crtc *crtc, int x, int y, struct drm_framebuffer *old_fb)</td>
+						</tr>
+						<tr>
+							<td><span>926</span><span>-</span></td>
+							<td>     Move the CRTC on the current frame buffer (stored in crtc-&gt;fb) to position (x,y). Any of the frame buffer, x position or y position may have been modified.</td>
+						</tr>
+						<tr>
+							<td><span>927</span><span>-</span></td>
+							<td>     This helper operation is optional. If not provided, the drm_crtc_helper_set_config function will fall back to the mode_set helper operation.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>Then the function should return 0 because this is not a real <c>fixup</c>.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>376</span><span>-</span></td>
+							<td>Called from debug_object_assert_init() with a hardcoded state ODEBUG_STATE_NOTAVAILABLE when the object is not found in the debug bucket.</td>
+						</tr>
+						<tr>
+							<td><span>377</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>378</span><span>-</span></td>
+							<td>Note, this function should make sure debug_object_init() is called before returning.</td>
+						</tr>
+						<tr>
+							<td><span>379</span><span>:</span></td>
+							<td>The handling of statically initialized objects is a special case. The fixup function should check if this is a legitimate case of a statically initialized object or not. In this case only debug_object_init() should be called to make the object known to the tracker. <h>Then the function should return 0 because this is not a real <c>fixup</c>.</h></td>
+						</tr>
+						<tr>
+							<td><span>380</span><span>-</span></td>
+							<td>Known Bugs And Assumptions</td>
+						</tr>
+						<tr>
+							<td><span>381</span><span>-</span></td>
+							<td>None (knock on wood).</td>
+						</tr>
+						<tr>
+							<td><span>382</span><span>-</span></td>
+							<td>Driver Basics</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>They provide information about the number of warnings and the number of successful <c>fixup</c>s along with information about the usage of the internal tracking objects and the state of the internal tracking objects pool.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>310</span><span>-</span></td>
+							<td>•    debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>311</span><span>-</span></td>
+							<td>Each of these functions takes the address of the real object and a pointer to the object type specific debug description structure.</td>
+						</tr>
+						<tr>
+							<td><span>312</span><span>-</span></td>
+							<td>Each detected error is reported in the statistics and a limited number of errors are printk'ed including a full stack trace.</td>
+						</tr>
+						<tr>
+							<td><span>313</span><span>:</span></td>
+							<td>The statistics are available via /sys/kernel/debug/debug_objects/stats. <h>They provide information about the number of warnings and the number of successful <c>fixup</c>s along with information about the usage of the internal tracking objects and the state of the internal tracking objects pool.</h></td>
+						</tr>
+						<tr>
+							<td><span>314</span><span>-</span></td>
+							<td>Debug functions</td>
+						</tr>
+						<tr>
+							<td><span>315</span><span>-</span></td>
+							<td>Debug object function reference</td>
+						</tr>
+						<tr>
+							<td><span>316</span><span>-</span></td>
+							<td>!Elib/debugobjects.c</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>Typically used to apply device-specific <c>fixup</c>s prior to issue of SET FEATURES - XFER MODE, and prior to operation.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>2890</span><span>-</span></td>
+							<td>Post-IDENTIFY device configuration</td>
+						</tr>
+						<tr>
+							<td><span>2891</span><span>-</span></td>
+							<td>void (*dev_config) (struct ata_port *, struct ata_device *);</td>
+						</tr>
+						<tr>
+							<td><span>2892</span><span>-</span></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span>2893</span><span>:</span></td>
+							<td>Called after IDENTIFY [PACKET] DEVICE is issued to each device found. <h>Typically used to apply device-specific <c>fixup</c>s prior to issue of SET FEATURES - XFER MODE, and prior to operation.</h></td>
+						</tr>
+						<tr>
+							<td><span>2894</span><span>-</span></td>
+							<td>This entry may be specified as NULL in ata_port_operations.</td>
+						</tr>
+						<tr>
+							<td><span>2895</span><span>-</span></td>
+							<td>Set PIO/DMA mode</td>
+						</tr>
+						<tr>
+							<td><span>2896</span><span>-</span></td>
+							<td>void (*set_piomode) (struct ata_port *, struct ata_device *);</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When debug_object_activate() has no tracked object for this object address then <c>fixup</c>_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>360</span><span>-</span></td>
+							<td>•    ODEBUG_STATE_ACTIVE</td>
+						</tr>
+						<tr>
+							<td><span>361</span><span>-</span></td>
+							<td>The function returns 1 when the fixup was successful, otherwise 0. The return value is used to update the statistics.</td>
+						</tr>
+						<tr>
+							<td><span>362</span><span>-</span></td>
+							<td>Note that the function needs to call the debug_object_activate() function again after the damage has been repaired in order to keep the state consistent.</td>
+						</tr>
+						<tr>
+							<td><span>363</span><span>:</span></td>
+							<td>The activation of statically initialized objects is a special case. <h>When debug_object_activate() has no tracked object for this object address then <c>fixup</c>_activate() is called with object state ODEBUG_STATE_NOTAVAILABLE.</h> The fixup function needs to check whether this is a legitimate case of a statically initialized object or not. In case it is it calls debug_object_init() and debug_object_activate() to make the object known to the tracker and marked active. In this case the function should return 0 because this is not a real fixup.</td>
+						</tr>
+						<tr>
+							<td><span>364</span><span>-</span></td>
+							<td>fixup_destroy</td>
+						</tr>
+						<tr>
+							<td><span>365</span><span>-</span></td>
+							<td>This function is called from the debug code whenever a problem in debug_object_destroy is detected.</td>
+						</tr>
+						<tr>
+							<td><span>366</span><span>-</span></td>
+							<td>Called from debug_object_destroy when the object state is:</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When debugobjects detects an error, then it calls the <c>fixup</c>_activate function of the object type description structure if provided by the caller.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>325</span><span>-</span></td>
+							<td>An object which is on the stack must be removed from the tracker by calling debug_object_free() before the function which allocates the object returns. Otherwise we keep track of stale objects.</td>
+						</tr>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr>
+							<td><span>327</span><span>-</span></td>
+							<td>This function is called whenever the activation function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>328</span><span>:</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. <h>When debugobjects detects an error, then it calls the <c>fixup</c>_activate function of the object type description structure if provided by the caller.</h> The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>329</span><span>-</span></td>
+							<td>When the real object is not yet tracked by debugobjects then the fixup_activate function is called if available. This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+						</tr>
+						<tr>
+							<td><span>330</span><span>-</span></td>
+							<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>331</span><span>-</span></td>
+							<td>debug_object_deactivate</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When debugobjects detects an error, then it calls the <c>fixup</c>_destroy function of the object type description structure if provided by the caller.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>334</span><span>-</span></td>
+							<td>When the deactivation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_INACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>335</span><span>-</span></td>
+							<td>debug_object_destroy</td>
+						</tr>
+						<tr>
+							<td><span>336</span><span>-</span></td>
+							<td>This function is called to mark an object destroyed. This is useful to prevent the usage of invalid objects, which are still available in memory: either statically allocated objects or objects which are freed later.</td>
+						</tr>
+						<tr>
+							<td><span>337</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be destroyed. Destruction is not allowed for active and destroyed objects. <h>When debugobjects detects an error, then it calls the <c>fixup</c>_destroy function of the object type description structure if provided by the caller.</h> The fixup function can correct the problem before the real destruction of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When debugobjects detects an error, then it calls the <c>fixup</c>_free function of the object type description structure if provided by the caller.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>338</span><span>-</span></td>
+							<td>When the destruction is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_DESTROYED.</td>
+						</tr>
+						<tr>
+							<td><span>339</span><span>-</span></td>
+							<td>debug_object_free</td>
+						</tr>
+						<tr>
+							<td><span>340</span><span>-</span></td>
+							<td>This function is called before an object is freed.</td>
+						</tr>
+						<tr>
+							<td><span>341</span><span>:</span></td>
+							<td>When the real object is tracked by debugobjects it is checked, whether the object can be freed. Free is not allowed for active objects. <h>When debugobjects detects an error, then it calls the <c>fixup</c>_free function of the object type description structure if provided by the caller.</h> The fixup function can correct the problem before the real free of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When the real object is not tracked by debugobjects, it calls <c>fixup</c>_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>342</span><span>-</span></td>
+							<td>Note that debug_object_free removes the object from the tracker. Later usage of the object is detected by the other debug checks.</td>
+						</tr>
+						<tr>
+							<td><span>343</span><span>-</span></td>
+							<td>debug_object_assert_init</td>
+						</tr>
+						<tr>
+							<td><span>344</span><span>-</span></td>
+							<td>This function is called to assert that an object has been initialized.</td>
+						</tr>
+						<tr>
+							<td><span>345</span><span>:</span></td>
+							<td><h>When the real object is not tracked by debugobjects, it calls <c>fixup</c>_assert_init of the object type description structure provided by the caller, with the hardcoded object state ODEBUG_NOT_AVAILABLE.</h> The fixup function can correct the problem by calling debug_object_init and other specific initializing functions.</td>
+						</tr>
+						<tr>
+							<td><span>346</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is ignored.</td>
+						</tr>
+						<tr>
+							<td><span>347</span><span>-</span></td>
+							<td>Fixup functions</td>
+						</tr>
+						<tr>
+							<td><span>348</span><span>-</span></td>
+							<td>Debug object type description structure</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+
+				<li><details>
+					<summary><!--
+						--><terms>1</terms><!--
+						--><term>When the real object is not yet tracked by debugobjects then the <c>fixup</c>_activate function is called if available.</term>
+					</summary>
+					<table><tbody>
+						<tr>
+							<td><span>326</span><span>-</span></td>
+							<td>debug_object_activate</td>
+						</tr>
+						<tr>
+							<td><span>327</span><span>-</span></td>
+							<td>This function is called whenever the activation function of a real object is called.</td>
+						</tr>
+						<tr>
+							<td><span>328</span><span>-</span></td>
+							<td>When the real object is already tracked by debugobjects it is checked, whether the object can be activated. Activating is not allowed for active and destroyed objects. When debugobjects detects an error, then it calls the fixup_activate function of the object type description structure if provided by the caller. The fixup function can correct the problem before the real activation of the object happens. E.g. it can deactivate an active object in order to prevent damage to the subsystem.</td>
+						</tr>
+						<tr>
+							<td><span>329</span><span>:</span></td>
+							<td><h>When the real object is not yet tracked by debugobjects then the <c>fixup</c>_activate function is called if available.</h> This is necessary to allow the legitimate activation of statically allocated and initialized objects. The fixup function checks whether the object is valid and calls the debug_objects_init() function to initialize the tracking of this object.</td>
+						</tr>
+						<tr>
+							<td><span>330</span><span>-</span></td>
+							<td>When the activation is legitimate, then the state of the associated tracker object is set to ODEBUG_STATE_ACTIVE.</td>
+						</tr>
+						<tr>
+							<td><span>331</span><span>-</span></td>
+							<td>debug_object_deactivate</td>
+						</tr>
+						<tr>
+							<td><span>332</span><span>-</span></td>
+							<td>This function is called whenever the deactivation function of a real object is called.</td>
+						</tr>
+					</tbody></table>
+				</details></li>
+			</ol></details></li>
+		</ol>
+	</details></li>
+	</ol></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

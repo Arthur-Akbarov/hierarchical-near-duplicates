@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this pointer</title>
+	<meta charset="utf-8">
+	<meta name="sourceTitle" content="openLDAP">
+	<link rel="stylesheet"           href="../../../css/loader.css">
+	<link rel="stylesheet"           href="../../../css/scrollbar.css">
+	<link rel="stylesheet"           href="../../../css/sidebar.css">
+	<link rel="stylesheet"           href="../../../css/tree.css">
+	<link rel="stylesheet"           href="../../../css/tree_light.css" title="light">
+	<link rel="stylesheet alternate" href="../../../css/tree_dark.css"  title="dark">
+	<script src='../../../js/tree.js'></script>
+</head>
+<body>
+	<div id="sidebar">
+		<button onclick="window.location.href='../../manual_browser.html'">back</button>
+		<button id="toggleTheme"      onclick="toggleTheme()">dark theme</button>
+		<button id="toggleSourcePane" onclick="toggleSourcePane()">show source</button>
+	</div>
+	<div id="top"><ol>
+	<li><details>
+		<summary><!--
+			--><matches>9</matches><!--
+			--><regex>This pointer should be supplied on a subsequent call to <m>*</m> to get the next <m>*</m>, the result of which should be supplied to the next call to <m>*</m>, etc. <m>*</m> will return NULL when there are no more</regex>
+		</summary>
+		<ol>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_entry()<c> to get the next </c>entry<c>, the result of which should be supplied to the next call to </c>ldap_next_entry()<c>, etc. </c>ldap_next_entry()<c> will return NULL when there are no more</c> entries.</regex>
+				</summary>
+				<table><tbody>
+					<tr>
+						<td><span>7997</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>7998</span><span>-</span></td>
+						<td>ldap_first_entry, ldap_next_entry, ldap_count_entries − LDAP result entry parsing and counting routines</td>
+					</tr>
+					<tr>
+						<td><span>7999</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>8000</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>8001</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>8002</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>8003</span><span>-</span></td>
+						<td>int ldap_count_entries( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8004</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_entry( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8005</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_entry( LDAP *ld, LDAPMessage *entry )</td>
+					</tr>
+					<tr>
+						<td><span>8006</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>8007</span><span>-</span></td>
+						<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+					</tr>
+					<tr>
+						<td><span>8008</span><span>-</span></td>
+						<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+					</tr>
+					<tr>
+						<td><span>8009</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+					</tr>
+					<tr>
+						<td><span>8010</span><span>-</span></td>
+						<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+					</tr>
+					<tr>
+						<td><span>8011</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>8012</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+					</tr>
+					<tr>
+						<td><span>8013</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>8014</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_first_attribute(3), ldap_get_values(3), ldap_get_dn(3)</td>
+					</tr>
+					<tr>
+						<td><span>8015</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>8016</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>9753</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>9754</span><span>-</span></td>
+						<td>ldap_first_entry, ldap_next_entry, ldap_count_entries − LDAP result entry parsing and counting routines</td>
+					</tr>
+					<tr>
+						<td><span>9755</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>9756</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>9757</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>9758</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>9759</span><span>-</span></td>
+						<td>int ldap_count_entries( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9760</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_entry( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9761</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_entry( LDAP *ld, LDAPMessage *entry )</td>
+					</tr>
+					<tr>
+						<td><span>9762</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>9763</span><span>-</span></td>
+						<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+					</tr>
+					<tr>
+						<td><span>9764</span><span>-</span></td>
+						<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+					</tr>
+					<tr>
+						<td><span>9765</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+					</tr>
+					<tr>
+						<td><span>9766</span><span>-</span></td>
+						<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+					</tr>
+					<tr>
+						<td><span>9767</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>9768</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+					</tr>
+					<tr>
+						<td><span>9769</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>9770</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_first_attribute(3), ldap_get_values(3), ldap_get_dn(3)</td>
+					</tr>
+					<tr>
+						<td><span>9771</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>9772</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>12602</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>12603</span><span>-</span></td>
+						<td>ldap_first_entry, ldap_next_entry, ldap_count_entries − LDAP result entry parsing and counting routines</td>
+					</tr>
+					<tr>
+						<td><span>12604</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>12605</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>12606</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>12607</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>12608</span><span>-</span></td>
+						<td>int ldap_count_entries( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12609</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_entry( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12610</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_entry( LDAP *ld, LDAPMessage *entry )</td>
+					</tr>
+					<tr>
+						<td><span>12611</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>12612</span><span>-</span></td>
+						<td>These routines are used to parse results received from ldap_result(3) or the synchronous LDAP search operation routines ldap_search_s(3) and ldap_search_st(3).</td>
+					</tr>
+					<tr>
+						<td><span>12613</span><span>-</span></td>
+						<td>The ldap_first_entry() routine is used to retrieve the first entry in a chain of search results. It takes the result as returned by a call to ldap_result(3) or ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first entry in the result.</td>
+					</tr>
+					<tr>
+						<td><span>12614</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_entry() to get the next entry, the result of which should be supplied to the next call to ldap_next_entry(), etc. ldap_next_entry() will return NULL when there are no more entries.</c> The entries returned from these calls are used in calls to the routines described in ldap_get_dn(3), ldap_first_attribute(3), ldap_get_values(3), etc.</td>
+					</tr>
+					<tr>
+						<td><span>12615</span><span>-</span></td>
+						<td>A count of the number of entries in the search result can be obtained by calling ldap_count_entries().</td>
+					</tr>
+					<tr>
+						<td><span>12616</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>12617</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_entry() or ldap_next_entry(), NULL is returned and the ld_errno field in the ld parameter is set to indicate the error. If an error occurs in ldap_count_entries(), -1 is returned, and ld_errno is set appropriately. See ldap_error(3) for a description of possible error codes.</td>
+					</tr>
+					<tr>
+						<td><span>12618</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>12619</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_first_attribute(3), ldap_get_values(3), ldap_get_dn(3)</td>
+					</tr>
+					<tr>
+						<td><span>12620</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>12621</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+				</tbody></table>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_message()<c> to get the next </c>message<c>, the result of which should be supplied to the next call to </c>ldap_next_message()<c>, etc. </c>ldap_next_message()<c> will return NULL when there are no more</c> messages.</regex>
+				</summary>
+				<table><tbody>
+					<tr>
+						<td><span>8026</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>8027</span><span>-</span></td>
+						<td>ldap_first_message, ldap_next_message, ldap_count_messages − Stepping through messages in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>8028</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>8029</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>8030</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>8031</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>8032</span><span>-</span></td>
+						<td>int ldap_count_messages( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8033</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_message( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8034</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_message( LDAP *ld, LDAPMessage *message )</td>
+					</tr>
+					<tr>
+						<td><span>8035</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>8036</span><span>-</span></td>
+						<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+					</tr>
+					<tr>
+						<td><span>8037</span><span>-</span></td>
+						<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>8038</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></td>
+					</tr>
+					<tr>
+						<td><span>8039</span><span>-</span></td>
+						<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+					</tr>
+					<tr>
+						<td><span>8040</span><span>-</span></td>
+						<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+					</tr>
+					<tr>
+						<td><span>8041</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>8042</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_message() or ldap_next_message(), NULL is returned. If an error occurs in ldap_count_messages(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>8043</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>8044</span><span>-</span></td>
+						<td>ldap(3), ldap_search(3), ldap_result(3), ldap_parse_result(3), ldap_first_entry(3), ldap_first_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>8045</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>8046</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>9782</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>9783</span><span>-</span></td>
+						<td>ldap_first_message, ldap_next_message, ldap_count_messages − Stepping through messages in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>9784</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>9785</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>9786</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>9787</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>9788</span><span>-</span></td>
+						<td>int ldap_count_messages( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9789</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_message( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9790</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_message( LDAP *ld, LDAPMessage *message )</td>
+					</tr>
+					<tr>
+						<td><span>9791</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>9792</span><span>-</span></td>
+						<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+					</tr>
+					<tr>
+						<td><span>9793</span><span>-</span></td>
+						<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>9794</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></td>
+					</tr>
+					<tr>
+						<td><span>9795</span><span>-</span></td>
+						<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+					</tr>
+					<tr>
+						<td><span>9796</span><span>-</span></td>
+						<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+					</tr>
+					<tr>
+						<td><span>9797</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>9798</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_message() or ldap_next_message(), NULL is returned. If an error occurs in ldap_count_messages(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>9799</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>9800</span><span>-</span></td>
+						<td>ldap(3), ldap_search(3), ldap_result(3), ldap_parse_result(3), ldap_first_entry(3), ldap_first_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>9801</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>9802</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>12631</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>12632</span><span>-</span></td>
+						<td>ldap_first_message, ldap_next_message, ldap_count_messages − Stepping through messages in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>12633</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>12634</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>12635</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>12636</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>12637</span><span>-</span></td>
+						<td>int ldap_count_messages( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12638</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_message( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12639</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_message( LDAP *ld, LDAPMessage *message )</td>
+					</tr>
+					<tr>
+						<td><span>12640</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>12641</span><span>-</span></td>
+						<td>These routines are used to step through the messages in a result chain received from ldap_result(3). For search operations, the result chain can contain referral, entry and result messages. The ldap_msgtype(3) function can be used to distinguish between the different message types.</td>
+					</tr>
+					<tr>
+						<td><span>12642</span><span>-</span></td>
+						<td>The ldap_first_message() routine is used to retrieve the first message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>12643</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_message() to get the next message, the result of which should be supplied to the next call to ldap_next_message(), etc. ldap_next_message() will return NULL when there are no more messages.</c></td>
+					</tr>
+					<tr>
+						<td><span>12644</span><span>-</span></td>
+						<td>These functions are useful when using routines like ldap_parse_result(3) that only operate on the first result in the chain.</td>
+					</tr>
+					<tr>
+						<td><span>12645</span><span>-</span></td>
+						<td>A count of the number of messages in the result chain can be obtained by calling ldap_count_messages(). It can also be used to count the number of remaining messages in a chain if called with a message, entry or reference returned by ldap_first_message() , ldap_next_message() , ldap_first_entry(3), ldap_next_entry(3), ldap_first_reference(3), ldap_next_reference(3).</td>
+					</tr>
+					<tr>
+						<td><span>12646</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>12647</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_message() or ldap_next_message(), NULL is returned. If an error occurs in ldap_count_messages(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>12648</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>12649</span><span>-</span></td>
+						<td>ldap(3), ldap_search(3), ldap_result(3), ldap_parse_result(3), ldap_first_entry(3), ldap_first_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>12650</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>12651</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+				</tbody></table>
+			</details></li>
+			<li><details>
+				<summary><!--
+					--><matches>3</matches><!--
+					--><regex><c>This pointer should be supplied on a subsequent call to </c>ldap_next_reference()<c> to get the next </c>reference message<c>, the result of which should be supplied to the next call to </c>ldap_next_reference()<c>, etc. </c>ldap_next_reference()<c> will return NULL when there are no more</c> reference messages.</regex>
+				</summary>
+				<table><tbody>
+					<tr>
+						<td><span>8056</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>8057</span><span>-</span></td>
+						<td>ldap_first_reference, ldap_next_reference, ldap_count_references − Stepping through continuation references in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>8058</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>8059</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>8060</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>8061</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>8062</span><span>-</span></td>
+						<td>int ldap_count_references( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8063</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_reference( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>8064</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_reference( LDAP *ld, LDAPMessage *reference )</td>
+					</tr>
+					<tr>
+						<td><span>8065</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>8066</span><span>-</span></td>
+						<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+					</tr>
+					<tr>
+						<td><span>8067</span><span>-</span></td>
+						<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>8068</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+					</tr>
+					<tr>
+						<td><span>8069</span><span>-</span></td>
+						<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+					</tr>
+					<tr>
+						<td><span>8070</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>8071</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>8072</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>8073</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_parse_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>8074</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>8075</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>9812</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>9813</span><span>-</span></td>
+						<td>ldap_first_reference, ldap_next_reference, ldap_count_references − Stepping through continuation references in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>9814</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>9815</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>9816</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>9817</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>9818</span><span>-</span></td>
+						<td>int ldap_count_references( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9819</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_reference( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>9820</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_reference( LDAP *ld, LDAPMessage *reference )</td>
+					</tr>
+					<tr>
+						<td><span>9821</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>9822</span><span>-</span></td>
+						<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+					</tr>
+					<tr>
+						<td><span>9823</span><span>-</span></td>
+						<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>9824</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+					</tr>
+					<tr>
+						<td><span>9825</span><span>-</span></td>
+						<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+					</tr>
+					<tr>
+						<td><span>9826</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>9827</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>9828</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>9829</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_parse_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>9830</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>9831</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+					<tr class="padding"></tr>
+					<tr class="hr"><td></td><td></td></tr>
+					<tr class="padding"></tr>
+					<tr>
+						<td><span>12661</span><span>-</span></td>
+						<td>NAME</td>
+					</tr>
+					<tr>
+						<td><span>12662</span><span>-</span></td>
+						<td>ldap_first_reference, ldap_next_reference, ldap_count_references − Stepping through continuation references in a result chain</td>
+					</tr>
+					<tr>
+						<td><span>12663</span><span>-</span></td>
+						<td>LIBRARY</td>
+					</tr>
+					<tr>
+						<td><span>12664</span><span>-</span></td>
+						<td>OpenLDAP LDAP (libldap, −lldap)</td>
+					</tr>
+					<tr>
+						<td><span>12665</span><span>-</span></td>
+						<td>SYNOPSIS</td>
+					</tr>
+					<tr>
+						<td><span>12666</span><span>-</span></td>
+						<td>#include &lt;ldap.h&gt;</td>
+					</tr>
+					<tr>
+						<td><span>12667</span><span>-</span></td>
+						<td>int ldap_count_references( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12668</span><span>-</span></td>
+						<td>LDAPMessage *ldap_first_reference( LDAP *ld, LDAPMessage *result )</td>
+					</tr>
+					<tr>
+						<td><span>12669</span><span>-</span></td>
+						<td>LDAPMessage *ldap_next_reference( LDAP *ld, LDAPMessage *reference )</td>
+					</tr>
+					<tr>
+						<td><span>12670</span><span>-</span></td>
+						<td>DESCRIPTION</td>
+					</tr>
+					<tr>
+						<td><span>12671</span><span>-</span></td>
+						<td>These routines are used to step through the continuation references in a result chain received from ldap_result(3) or the synchronous LDAP search operation routines.</td>
+					</tr>
+					<tr>
+						<td><span>12672</span><span>-</span></td>
+						<td>The ldap_first_reference() routine is used to retrieve the first reference message in a result chain. It takes the result as returned by a call to ldap_result(3), ldap_search_s(3) or ldap_search_st(3) and returns a pointer to the first reference message in the result chain.</td>
+					</tr>
+					<tr>
+						<td><span>12673</span><span>:</span></td>
+						<td><c>This pointer should be supplied on a subsequent call to ldap_next_reference() to get the next reference message, the result of which should be supplied to the next call to ldap_next_reference(), etc. ldap_next_reference() will return NULL when there are no more reference messages.</c> The reference messages returned from these calls are used by ldap_parse_reference(3) to extract referrals and controls.</td>
+					</tr>
+					<tr>
+						<td><span>12674</span><span>-</span></td>
+						<td>A count of the number of reference messages in the search result can be obtained by calling ldap_count_references(). It can also be used to count the number of reference messages remaining in a result chain.</td>
+					</tr>
+					<tr>
+						<td><span>12675</span><span>-</span></td>
+						<td>ERRORS</td>
+					</tr>
+					<tr>
+						<td><span>12676</span><span>-</span></td>
+						<td>If an error occurs in ldap_first_reference() or ldap_next_reference(), NULL is returned. If an error occurs in ldap_count_references(), -1 is returned.</td>
+					</tr>
+					<tr>
+						<td><span>12677</span><span>-</span></td>
+						<td>SEE ALSO</td>
+					</tr>
+					<tr>
+						<td><span>12678</span><span>-</span></td>
+						<td>ldap(3), ldap_result(3), ldap_search(3), ldap_parse_reference(3)</td>
+					</tr>
+					<tr>
+						<td><span>12679</span><span>-</span></td>
+						<td>ACKNOWLEDGEMENTS</td>
+					</tr>
+					<tr>
+						<td><span>12680</span><span>-</span></td>
+						<td>OpenLDAP Software is developed and maintained by The OpenLDAP Project &lt;http://www.openldap.org/&gt;. OpenLDAP Software is derived from University of Michigan LDAP 3.3 Release.</td>
+					</tr>
+				</tbody></table>
+			</details></li>
+		</ol>
+	</details></li>
+	</ol></div>
+	<div id="resizer"></div>
+	<div id="bottom"></div>
+</body>
+</html>

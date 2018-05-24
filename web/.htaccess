@@ -1,0 +1,1 @@
+RedirectMatch ^/diploma/?$ /diploma/html/manual_browser.html
